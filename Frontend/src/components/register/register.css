@@ -1,0 +1,113 @@
+.flex{
+    display: grid;
+    place-content: center;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 10vh;
+}
+
+.imgFix{
+    height: 400px;
+    margin: 0 auto;
+}
+    
+.main{
+    display:flex;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    /* position:fixed; */
+    background-color: #C2D9FF;
+    flex-direction: column;
+    width: 300px;
+    min-height: 450px;
+    margin: 0 auto;
+    /* top: 10%;
+    left: 37%; */
+    border-radius:20px;
+    align-content: center;
+box-sizing: content-box;
+
+}
+
+.inputs{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    box-sizing: content-box;
+
+    width: 200px;
+    min-height: 200px;
+    left: 15%;
+}
+.titles {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 450;
+    box-sizing: content-box;
+    margin: 16px 0px;
+}
+#reg{
+    width: 145px;
+    font-size: large;
+    margin-top: 30px;
+    box-sizing: content-box;
+    background-color: #190482 ;
+    color: white;
+    cursor: pointer;
+    padding: 1px 6px;
+    border-radius: 30%;
+}
+.panel{
+    display: flex;
+    position: relative;
+    background-color: #8E8FFA;
+    border-radius: 20px;
+    top: 20px;
+    left: 45px;
+    box-sizing: content-box;
+    width: 200px;
+    height: 40px;
+    align-content: center;
+    justify-content: center;
+    margin: 10px 0px;
+
+    gap: 40px;
+}
+.login{
+    display: flex;
+    padding-top: 10px;
+    padding-left:30px;
+    width: 30px;
+    height: 10px;
+    box-sizing: content-box;
+    background-color: #8E8FFA;
+    padding-bottom: 20px;
+    border-radius: 20px;
+}
+.sign{
+    display: flex;
+    padding-top: 10px;
+    padding-left:10px;
+    width: 100px;
+    height: 10px;
+    background-color: white;
+    padding-bottom: 20px;
+    border-radius: 20px;
+    box-sizing: content-box;
+}
+.panel>.sign{
+    padding-left:20px ;
+    box-sizing: content-box;
+}
+.input_box{
+    padding: 5px;
+    box-sizing: content-box;
+    width: 90%;
+}
+
+@media (width<900px) {
+    .flex{
+        grid-template-columns: 1fr;
+    }
+    .imgFix{
+        height: 200px;
+    }
+}

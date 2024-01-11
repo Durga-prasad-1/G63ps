@@ -1,0 +1,173 @@
+.flexes{
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    margin-top: 7vh;
+    grid-template-columns: 1.5fr 1fr;
+}
+
+.imagePos{
+    height: 500px;
+}
+
+
+#outerbox{
+    height: 380px;
+    width: 310px;
+    /* position: absolute; */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    /* top: 13%;
+    left: 38%; */
+    background-color: #c2d9ff;
+    border-radius: 10px;
+}
+
+.div_box{
+    display: inline-block;
+    
+}
+
+.putted{
+    padding: 15px;
+}
+#top{
+    background-color:#8e8ffa;
+    width: 60%;
+    border-radius: 20px;
+    display: flex;
+    gap: 1px;
+    margin:auto;
+    margin-top: 10px;
+}
+
+#Login{
+    height: 45px;
+    width: 120px;
+    background-color: white;
+    text-align: center;
+    padding-top: 15px;
+    border-radius: 20px;
+    margin-right: 1px;
+}
+
+#Sign{
+    height: 45px;
+    width: 100px;
+    text-align: center;
+    background-color:#8e8ffa;
+    padding-top: 15px;
+    border-radius: 20px;
+}
+
+#username{
+    margin-top: 30px;
+    margin-bottom: 25px;
+    margin-left: 2px;
+}
+
+#password{
+    margin-left: 2px;
+    margin-bottom: 2px;
+}
+
+
+#user{
+    margin-top: 4px;
+    width: 90%;
+    height: 20px;
+}
+
+#pass{
+    margin-top: 4px;
+    width: 90%;
+    height: 20px;
+}
+
+.forgot{
+    position: relative;
+    left: 95px;
+    text-decoration: none;
+}
+.none {
+    text-decoration: none;
+    color: black;
+}
+#login{
+    background-color:#365be1;
+    color: aliceblue;
+    font-weight: bold;
+    height: 30px;
+    width: 60px;
+    cursor: pointer;
+    position: relative;
+    top: 40px;
+    right: 80px;
+}
+
+#login:hover{
+    background-color: #0a36d9;
+    border: solid 3px black;
+}
+
+#extra{
+    color: gray;
+    position: relative;
+    top: 47px;
+}
+
+#bottom{
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    top: 60px;
+}
+
+#google{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    height: 25px;
+    width: 70px;
+    text-align: center;
+    border: solid 1px black;
+}
+#google:hover{
+    border: solid 2px black;
+}
+
+#face{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    height: 25px;
+    width: 70px;
+    text-align: center;
+    border:solid 1px black;
+}
+
+#face:hover{
+    border: solid 2px black;
+}
+
+#x{
+    padding-top: 5px;
+    padding-bottom: 15px;
+    height: 25px;
+    width: 70px;
+    text-align: center;
+    border: solid 1px black-;
+}
+
+#x:hover{
+    border: solid 2px black;
+}
+.form{
+    padding-left: 10px;
+}
+
+@media (width<900px) {
+    .flexes{
+        grid-template-columns: 1fr;
+    }
+    .imagePos{
+        height: 300px;
+    }
+}

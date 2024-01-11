@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Merienda:wght@500&family=Nunito+Sans:opsz,wght@6..12,500&family=Nunito:ital,wght@0,200;0,300;1,200&family=Outfit:wght@200&family=Playfair+Display&family=Ubuntu:ital,wght@0,400;1,300;1,400&display=swap');
+.contact_con {
+    width: 60%;
+    font-family: "Nunito Sans";
+    font-size: 1.5rem;
+    min-height: 30vh;
+    border: 1px solid #333;
+    background-color: #6be0c187;
+    border-radius: 18px;
+    
+}
+
+.contact_con form{
+    
+    
+    display: flex;
+    
+    flex-direction: column;
+    gap: 2.5rem;
+    /* justify-content: center;/ */
+    /* align-items: center; */
+    
+    
+}
+
+.contact_con label,.contact_con input{
+    width: 90%;
+    padding: 0.4rem 0.6rem;
+    
+}
+.contact_con textarea{
+    padding: 0.4rem 0.6rem;
+    font-family: "Nunito Sans";
+
+}
+
+.contact_con button{
+    padding: 0.4rem;
+    width: 40%;
+    color: white;
+    background-color:#0259c4d5 ;
+    border: 1px solid #333;
+    border-radius: 5px;
+
+}
+
+.contactGrid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+}
+
+.contactGrid img{
+    width: 450px;
+    margin: auto;
+}
+
+@media (width<900px) {
+    .contactGrid{
+        grid-template-columns: 1fr;
+        
+    }
+    .contact_con{
+        margin: auto;
+    }
+
+    .contact_con textarea{
+        width: 80%;
+    }
+    .contactGrid img{
+        width: 300px;
+    }
+    .contact_con form{
+        gap:1rem;
+    }
+}
