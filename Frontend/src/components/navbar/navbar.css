@@ -41,8 +41,78 @@
         height: 30px;
         /* display: none; */
     }
+    .active1{
+        display: none;
+    }
+    .active2{
+        display: block;
+    }
+/* start of decision for logout */
+.permission{
+    width: 100%;
+    position: fixed;
+    height: 100%;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.245);
+    z-index: 50;
+}
+.decisionMaking{
+    width: 50%;
+    height: 20vh;
+    top: 40%;
+    left: 25%;
+    /* margin: 0px 50vw; */
+    position: fixed;
+    background-color: white;
+    border-radius: 20px;
+    z-index: 55;
+}
+.decisionMaking h6{
+    font-size: 20px;
+    font-weight: 2;
+    /* display: flex; */
+    /* justify-content: space-between; */
+    font-family: Roboto,sans-serif;
+}
+.yesOrNo{
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.butn{
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    width: 10%;
+    border-radius: 7px;
+    border: 1px solid #333;
 
-    
+}
+.butn:nth-child(1){
+    color: var(--white);
+    background-color: var(--primary-color);
+}
+.butn:nth-child(1):hover{
+    background-color: var(--primary-color-dark);
+
+}
+
+.butn:nth-child(2){
+    background-color: white;
+}
+.butn:nth-child(2):hover{
+    background-color: rgba(122, 119, 119, 0.507);
+}
+.hanuman{
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+
+}
+/* start of decision for logout */    
 
 
     @media (width < 900px) {
