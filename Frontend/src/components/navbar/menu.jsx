@@ -28,7 +28,7 @@ export default function Menu(){
 
     return(
         <div className="menu_bar">
-            <svg xmlns="http://www.w3.org/2000/svg" className="bi bi-list" style={{width:30,height:30}} fill="currentColor"  viewBox="0 0 16 16">
+            <svg xmlns="http://www.w3.org/2000/svg" onClick={black} className="bi bi-list" style={{width:30,height:30}} fill="currentColor"  viewBox="0 0 16 16">
                 <path fillRule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
             </svg>
             
