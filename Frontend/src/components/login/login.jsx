@@ -1,7 +1,7 @@
 import React from "react";
 import "./login.css";
 import { useState } from "react";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import loginImg from "../images/login.png";
 
 
@@ -77,7 +77,7 @@ function Login(props){
                         <input type="radio" className="putted" id="rem"/>Remember me
                     </label>
                 </div>
-                <a className="forgot" to="#">Forgot Me?</a>
+                <a className="forgot" href="#">Forgot Me?</a>
                 <button type="submit" id="login">Login</button>
                 <div className="div_box" id="extra">------------------or sign in with-------------------</div>
             </form>
