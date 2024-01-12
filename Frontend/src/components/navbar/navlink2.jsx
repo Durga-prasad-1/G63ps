@@ -1,11 +1,12 @@
 import React,{ useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink,useNavigate  } from "react-router-dom";
 import Menu from "./menu";
 import "./navbar.css"
 
 
-function Navbar2(){
+function Navbar2(props){
     const [showMediaIcons, setShowMediaIcons] = useState(false);
+    const navigate = useNavigate();
     function showPermission(){
         let show = document.querySelector("#permission");
         show.classList.remove("active1");
@@ -14,6 +15,12 @@ function Navbar2(){
         let show = document.querySelector("#permission");
         show.classList.add("active1");
     }
+    function nav(){
+        notShowPermission();
+        props.func(false) // changes the navbar
+        navigate("/");
+    }
+
     return(
         <div>
         <nav className="nav">
@@ -21,7 +28,7 @@ function Navbar2(){
                 <ul className={
                 showMediaIcons ? "nav__links mobile_menu_links" : "nav__links"
                 }>
-                <li className="link"><NavLink className="bb" to="/" target="_parent">Home</NavLink></li>
+                <li className="link"><NavLink className="bb" to="/"  onClick={props.func(true)}>Home</NavLink></li>
                 <li className="link"><NavLink className="bb" to="/about">About Us</NavLink></li>
                 <li className="link"><NavLink className="bb" to ="/contact">Contact</NavLink></li>
                 <li className="link" ><button className="btn" onClick={showPermission} >Logout</button></li>
@@ -42,7 +49,7 @@ function Navbar2(){
                 {/* <button>aut</button> */}
                 </div>                
                 <div className="yesOrNo">
-                    <button className="butn">Yes</button>
+                    <button className="butn" onClick={nav}>Yes</button>
                     <button className="butn" onClick={notShowPermission}>No</button>
                 </div>
             </div>

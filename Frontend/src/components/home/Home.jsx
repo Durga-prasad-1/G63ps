@@ -4,7 +4,10 @@ import homePhoto from "../images/original.png";
 import { Link } from "react-router-dom";
 
 
-function Home(){
+function Home(props){
+    function setNav(){
+    props.func(true); // this is for navbar status 
+    }
     return(
     <div className="container body">
         
@@ -21,7 +24,7 @@ function Home(){
             <span className="image__bg span"><img className="img" src={homePhoto} alt="fhv"/></span>
             </div>
             <div className="responsive_button">
-            <Link to="/form" target="_blank"><button className="form_button">Form</button></Link>
+            <Link to="/form" ><button className="form_button" onClick={setNav}>Form</button></Link>
             </div>
         </header>
         

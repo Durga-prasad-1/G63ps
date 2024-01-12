@@ -16,19 +16,20 @@ import {
 
 function App(){
     const [setNav,handleNav] = useState(false);
+    // handleNav(setNav);
     return(
         
             
         <Router>
-            {setNav?<Navbar2/>:<Navbar/>}
+            {setNav?<Navbar2 set={setNav} func={handleNav}/>:<Navbar/>}
             <Routes>
                 
             <Route path="/about" element={<Contact/>} />
             <Route path="/contact" element={<Contact/>} />
             <Route path="/login" element={<Login set={setNav} func={handleNav}/>} />
             <Route path="/register" element={<Register/>} />
-            <Route  path="/form" element={<Form/>} />     
-            <Route path="/" element={<Home />} />
+            <Route  path="/form" element={<Form set={setNav} func={handleNav}/>} />     
+            <Route path="/" element={<Home set={setNav} func={handleNav}/>} />
             </Routes>
         </Router>
         
