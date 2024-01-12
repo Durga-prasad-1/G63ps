@@ -1,7 +1,7 @@
 import React from "react";
 import "./register.css";
 import { useState } from "react";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import registerImg from "../images/discuss2.png"
 
 function Register(){
