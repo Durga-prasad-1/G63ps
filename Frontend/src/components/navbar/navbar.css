@@ -143,10 +143,11 @@
             height: 30rem;
             z-index: 99;
             
-            display: grid;
-            grid-column: 2/5;
+            display: flex;
+            flex-direction: column;
             align-items: center;
-            padding-left: 3rem;
+            justify-content: center;
+            padding:0% 5%;
             transition: all 2s linear;
             transform-origin: top;
             box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
