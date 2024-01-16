@@ -1,5 +1,6 @@
 import React from "react";
 import "./style_home.css";
+import about from "../images/about1.png"
 import homePhoto from "../images/original.png";
 import { Link } from "react-router-dom";
 
@@ -9,6 +10,7 @@ function Home(props){
     props.func(true); // this is for navbar status 
     }
     return(
+        <div>
     <div className="container body">
         
         
@@ -27,7 +29,15 @@ function Home(props){
             <Link to="/form" ><button className="form_button" onClick={setNav}>Form</button></Link>
             </div>
         </header>
-        
+        </div>
+        <div className="about" id="about">
+            <img src={about} alt="about" />
+            <p>
+                <h3>ABOUT US:</h3>            
+                We leverage advanced machine learning algorithms trained on comprehensive thyroid datasets to deliver insightful predictions. These sophisticated algorithms form the backbone of our platform, enabling us to provide users with invaluable predictions about potential thyroid conditions.
+            </p>
+            
+        </div>
         </div>
 
         );

@@ -6,6 +6,12 @@ import "./navbar.css"
 
 function Navbar2(props){
     const [showMediaIcons, setShowMediaIcons] = useState(false);
+    const scrollToDiv = () => {
+        const element = document.getElementById('about');
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
     const navigate = useNavigate();
     function showPermission(){
         let show = document.querySelector("#permission");
@@ -29,7 +35,7 @@ function Navbar2(props){
                 showMediaIcons ? "nav__links mobile_menu_links" : "nav__links"
                 }>
                 <li className="link"><NavLink className="bb" to="/"  onClick={props.func(true)}>Home</NavLink></li>
-                <li className="link"><NavLink className="bb" to="/about">About Us</NavLink></li>
+                <li className="link " onClick={scrollToDiv}><span className="bb">About Us</span></li>
                 <li className="link"><NavLink className="bb" to ="/contact">Contact</NavLink></li>
                 <li className="link" ><button className="btn" onClick={showPermission} >Logout</button></li>
                 </ul>            

@@ -1,11 +1,15 @@
 .nav {
-    padding: 2rem 1rem 0rem 1rem;
+    padding: 2rem 1rem 1rem 1rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     font-family: "Roboto", sans-serif;
     gap: 1rem;
     max-width: 98vw;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 101;
     }
 
     .nav__logo {

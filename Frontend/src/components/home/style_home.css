@@ -31,7 +31,7 @@ font-family: "Roboto", sans-serif;
 }
 
 .container {
-min-height: 91vh;
+min-height: 75vh;
 max-width: 1200px;
 margin: auto;
 display: flex;
@@ -209,6 +209,22 @@ text-decoration: none;
 .form_button:hover {
     background-color: var(--primary-color-dark);
     }
+/*about css */
+.about{
+    max-width: 1200px;
+    min-height: 30vh;
+    margin: 0 auto;
+    font-family: "Roboto", sans-serif;
+    display: grid;
+    text-align: center;
+    grid-template-columns: 0.5fr 2fr;
+    place-content: center;
+    align-items: center;
+}
+.about img {
+    height: 300px;
+}
+
 @media (width < 900px) {
 /* .nav__links {
     display: none;
