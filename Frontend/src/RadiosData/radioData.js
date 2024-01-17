@@ -1,6 +1,6 @@
 const radio = [
     {
-        name :"On-thyroid",
+        name :"On-Thyroid",
         yes :"Yes",
         no : "No"
     },
