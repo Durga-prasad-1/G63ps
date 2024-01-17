@@ -33,7 +33,7 @@ function Home(props){
         <div className="about" id="about">
             <img src={about} alt="about" />
             <p>
-                <h3>ABOUT US:</h3>            
+                <span className="abt">ABOUT US:</span>            
                 We leverage advanced machine learning algorithms trained on comprehensive thyroid datasets to deliver insightful predictions. These sophisticated algorithms form the backbone of our platform, enabling us to provide users with invaluable predictions about potential thyroid conditions.
             </p>
             

@@ -224,7 +224,11 @@ text-decoration: none;
 .about img {
     height: 300px;
 }
-
+.abt{
+    font-size: large;
+    font-weight: bold;
+    display: block;
+}
 @media (width < 900px) {
 /* .nav__links {
     display: none;
