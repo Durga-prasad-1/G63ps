@@ -13,7 +13,6 @@ const predictForm = async (req, res) => {
                 scriptPath: "./ML_model",
                 args: JSON.stringify(data),
             };
-
             return new Promise((resolve, reject) => {
                 PythonShell.run("deployment_g63.py", options).then((results) => {
                     try {
@@ -34,8 +33,7 @@ const predictForm = async (req, res) => {
         res.json({prediction });
 
     } catch (error) {
-        console.log("errorrorror");
-        console.log(error);
+        console.log("Error:",error);
         res.status(500).json({ error: "Internal Server Error" });
         return;
     }
