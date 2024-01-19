@@ -3,7 +3,7 @@ import sys
 import json
 import pandas as pd
 
-path = "C:/Users/jayan/OneDrive/Documents/KMIT/PS/Thyroid Detection/WebApp/server/ML_model/model1.pkl"
+path = "C:/Users/jayan/OneDrive/Documents/KMIT/PS/Thyroid Detection/WebApp/server/ML_model/model.pkl"
 
 with open(path, 'rb') as model_file:
     model = pickle.load(model_file)
