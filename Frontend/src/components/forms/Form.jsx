@@ -45,14 +45,15 @@ function Form(props){
             ...formData,
         });
         try {
-            const response = fetch("",{
+            const response = fetch("http://localhost:5000/model/prediction",{
                 method: "POST",
                 headers:{
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify(formData),
             });
-            console.log(response);
+            const result = await response.json();
+            console.log(result.msg);
         } catch (error) {
             console.log(error);
         }
