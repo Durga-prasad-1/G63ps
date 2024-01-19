@@ -14,6 +14,7 @@ function Form(props){
     let [formData, setFormData] = useState({
         Name:"",
         Gender:"",
+        Age:"",
         OnThyroid:"",
         OnAntithyroidMedication:"",
         Sick:"",
@@ -26,13 +27,11 @@ function Form(props){
         Psych:"",
         TSH:"",
         T3:"",
-        TT4:"",
-        T4U:"",
-        FTI:"",
+        TT4:"",        
     });
 
     function Details(object){
-        return(  <RadioBox key={object.key} name={object.name} yes={object.yes} no={object.no} set={formData} func={setFormData}/>);
+        return(  <RadioBox yes={object.yes} no={object.no} key={object.key} name={object.name} set={formData} func={setFormData}/>);
     }
 
     function handleSubmit(event){
@@ -63,12 +62,11 @@ function Form(props){
                     <div className="form">
                         <Name set={formData} func={setFormData} />
                         <Gender set={formData} func={setFormData}/>
+                        <Input type="number" name="Age" key="Age" set={formData} func={setFormData}/>
                         {radio.map(Details)}
                         <Input name="TSH" key="TSH" set={formData} func={setFormData}/>
                         <Input name="T3" key="T3" set={formData} func={setFormData}/>
-                        <Input name="TT4" key="TT4" set={formData} func={setFormData}/>
-                        <Input name="T4U" key="T4U" set={formData} func={setFormData}/>
-                        <Input name="FTI" key="FTI" set={formData} func={setFormData}/>                        
+                        <Input name="TT4" key="TT4" set={formData} func={setFormData}/>                                   
                     </div>
                     <div className="button_class" >
                         <button className="_button" type="submit" value="Submit">Submit</button>

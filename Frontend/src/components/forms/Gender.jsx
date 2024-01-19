@@ -14,9 +14,8 @@ function Gender(props){
                 <label htmlFor="Genders_id">
                     <input  className="input" list="Genders" onChange={handle} name="Gender" id="Genders_id"/>
                     <datalist id="Genders">
-                        <option value="Male">Male</option>
-                        <option value="Female">Female</option>
-                        <option value="Others">Others</option>
+                        <option value="1">Male</option>
+                        <option value="0">Female</option>                        
                     </datalist>
                     <br/>
                 </label>

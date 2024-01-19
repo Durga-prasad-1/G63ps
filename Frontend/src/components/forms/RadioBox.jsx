@@ -16,13 +16,13 @@ function RadioBox(props){
     <p className="sub_title">{props.name+":"}</p>
     <br/>
     <div className="radio-buttons-container">
-    <input type="radio" name={joinName} className="radio-button__input" onChange={handle} value="Yes" id={props.yes} />
+    <input type="radio" name={joinName} className="radio-button__input" onChange={handle} value="1" id={props.yes} />
     <label htmlFor={props.yes} className="radio-button__label">
         <span className="radio-button__custom"></span>{"Yes"}
         
         </label>
 
-        <input type="radio" name={joinName} className="radio-button__input" onChange={handle} value="No" id={props.no}/>
+        <input type="radio" name={joinName} className="radio-button__input" onChange={handle} value="0" id={props.no}/>
         <label htmlFor={props.no} className="radio-button__label">
             <span className="radio-button__custom"></span>{"No"}
             
