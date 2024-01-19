@@ -44,7 +44,7 @@ function Form(props){
             ...formData,
         });
         try {
-            const response = fetch("",{
+            const response = fetch("http://localhost:5000/model/prediction",{
                 method: "POST",
                 headers:{
                     "Content-Type": "application/json",
