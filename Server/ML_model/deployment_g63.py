@@ -17,6 +17,7 @@ if __name__ == "__main__":
     # Parse input data from command line arguments
     data = json.loads(sys.argv[1])
     input_data = [list(data.values())]
+    # Converting strings into integers and NaN
     input_data[0][1]=int(input_data[0][1])
     for i in range(len(input_data[0])):
         if input_data[0][i] == "0" or input_data[0][i] == "1":
