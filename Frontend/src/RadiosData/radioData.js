@@ -77,6 +77,12 @@ const radio = [
         no: "no12",
         key:13
     },
+    {
+        name:"Lithium",
+        yes:"yes13",
+        no:"no13",
+        key:14
+    }
 ];
 
 export default radio;
