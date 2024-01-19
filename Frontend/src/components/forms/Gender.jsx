@@ -5,6 +5,8 @@ function Gender(props){
             ...props.set,
             [event.target.name]: event.target.value,
         });
+        console.log(event.target.value);
+        console.log(event.target.name);
     }
     return(
 
@@ -14,8 +16,8 @@ function Gender(props){
                 <label htmlFor="Genders_id">
                     <input  className="input" list="Genders" onChange={handle} name="Gender" id="Genders_id"/>
                     <datalist id="Genders">
-                        <option value="1">Male</option>
-                        <option value="0">Female</option>                        
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>                        
                     </datalist>
                     <br/>
                 </label>

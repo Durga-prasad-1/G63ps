@@ -13,21 +13,25 @@ function Form(props){
     console.log(props.set) // this is for navbar status 
     let [formData, setFormData] = useState({
         Name:"",
-        Gender:"",
         Age:"",
+        Gender:"",
+        TSH:"",
+        T3:"",
+        TT4:"",
         OnThyroid:"",
         OnAntithyroidMedication:"",
+        QueryOnThyroxine:"",
         Sick:"",
         Pregnant:"",
         ThyroidSurgery:"",
         I131Treatment:"",
+        QueryHypothyroid:"",
+        QueryHyperthyroid:"",
         Goitre:"",
         Tumor:"",
         Hypopituitary:"",
         Psych:"",
-        TSH:"",
-        T3:"",
-        TT4:"",        
+                
     });
 
     function Details(object){
@@ -61,7 +65,7 @@ function Form(props){
                     <form id="formList" onSubmit={handleSubmit}>
                     <div className="form">
                         <Name set={formData} func={setFormData} />
-                        <Gender set={formData} func={setFormData}/>
+                        <RadioBox yes={"yes30"} no={"no30"} key={30} name={"Gender"} set={formData} func={setFormData}/>
                         <Input type="number" name="Age" key="Age" set={formData} func={setFormData}/>
                         {radio.map(Details)}
                         <Input name="TSH" key="TSH" set={formData} func={setFormData}/>

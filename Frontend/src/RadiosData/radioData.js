@@ -1,12 +1,12 @@
 const radio = [
     {
-        name :"On-Thyroid",
+        name :"On Thyroid",
         yes :"Yes",
         no : "No",
         key:1
     },
     {
-        name:"On-Antithyroid-Medication",
+        name:"On Antithyroid Medication",
         yes :"Yes1",
         no : "No1",
         key:2
@@ -24,13 +24,13 @@ const radio = [
         key:4
     },
     {
-        name:"Thyroid-Surgery",
+        name:"Thyroid Surgery",
         yes :"Yes4",
         no : "No4",
         key:5
     },
     {
-        name:"I131-Treatment",
+        name:"I131 Treatment",
         yes :"Yes5",
         no : "No5",
         key:6
@@ -58,6 +58,24 @@ const radio = [
         yes :"Yes9",
         no : "No9",
         key:10
+    },
+    {
+        name:"Query On Thyroxine",
+        yes: "yes10",
+        no: "no10",
+        key:11
+    },
+    {
+        name:"Query Hypothyroid",
+        yes: "yes11",
+        no: "no11",
+        key:12
+    },
+    {
+        name:"Query Hyperthyroid",
+        yes: "yes12",
+        no: "no12",
+        key:13
     },
 ];
 
