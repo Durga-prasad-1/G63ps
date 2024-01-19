@@ -3,7 +3,8 @@ import "./login.css";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import loginImg from "../images/login.png";
-
+import { GoogleLogin } from '@react-oauth/google';
+import { jwtDecode } from "jwt-decode"
 
 function Login(props){
 
@@ -83,8 +84,17 @@ function Login(props){
             </form>
         </div>
         <div className="div_box" id="bottom">
-            <button id="google">Google</button>
-            <button id="face">Facebook</button>
+        <GoogleLogin
+            onSuccess={credentialResponse => {
+                const jwttoken = jwtDecode(credentialResponse.credential);
+                props.func(true);
+                console.log(jwttoken);
+            }}
+            onError={() => {
+                console.log('Login Failed');
+            }}
+            />;
+            <button id="face" >Facebook</button>
             <button id="x">X(twitter)</button>
         </div>
     </div>
