@@ -2,7 +2,6 @@ import React,{ useState } from "react";
 import { NavLink,useNavigate  } from "react-router-dom";
 import Menu from "./menu";
 import AccountMenu from "./task";
-import AccountMenu from "./task";
 import "./navbar.css"
 
 
