@@ -9,7 +9,7 @@
     position: sticky;
     top: 0;
     background-color: white;
-    z-index: 101;
+    z-index: 80;
     }
 
     .nav__logo {
@@ -58,7 +58,7 @@
     height: 100%;
     top: 0;
     background-color: rgba(0, 0, 0, 0.245);
-    z-index: 50;
+    z-index: 100;
 }
 .decisionMaking{
     width: 30%;
@@ -118,9 +118,12 @@
     justify-content: space-between;
     border-bottom: 1px solid black;
 
+}    
+/* end of decision for logout */    
+.googleImg{
+    list-style:none;
 }
-/* start of decision for logout */    
-
+/*-----------------------------------*/
 
     @media (width < 900px) {
         .nav{
