@@ -8,7 +8,7 @@ export default function Menu(){
         let divBox;
             if (event.target.classList.contains('bi')) {
             divBox=event.target.parentElement.style;
-            console.log(divBox)
+            
         }
         else if(event.target.classList.contains('menu_bar')){
             divBox=event.target.style;

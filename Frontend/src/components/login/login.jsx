@@ -89,13 +89,12 @@ function Login(props){
                 const jwttoken = jwtDecode(credentialResponse.credential);
                 props.func(true);
                 console.log(jwttoken);
+                // props.googlefunc(jwttoken); // this is for google authentication
             }}
             onError={() => {
                 console.log('Login Failed');
             }}
-            />;
-            <button id="face" >Facebook</button>
-            <button id="x">X(twitter)</button>
+            />
         </div>
     </div>
     </div>

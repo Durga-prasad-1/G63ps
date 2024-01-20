@@ -21,7 +21,7 @@ function App(){
         
             
         <Router>
-            {setNav?<Navbar2 set={setNav} func={handleNav}/>:<Navbar/>}
+            {setNav?<Navbar2 set={setNav} func={handleNav} />:<Navbar/>}
             <Routes>
                 
             <Route path="/about" element={<Contact/>} />
