@@ -17,16 +17,17 @@ import {
 function App(){
     const [setNav,handleNav] = useState(false);
     // handleNav(setNav);
+    const [googleProfile,handleGoogle] = useState(null);
     return(
         
             
         <Router>
-            {setNav?<Navbar2 set={setNav} func={handleNav}/>:<Navbar/>}
+            {setNav?<Navbar2 set={setNav} func={handleNav} googleProfile={googleProfile} googlefunc={handleGoogle}/>:<Navbar/>}
             <Routes>
                 
             <Route path="/about" element={<Contact/>} />
             <Route path="/contact" element={<Contact/>} />
-            <Route path="/login" element={<Login set={setNav} func={handleNav}/>} />
+            <Route path="/login" element={<Login set={setNav} func={handleNav} googleProfile={googleProfile} googlefunc={handleGoogle}/>} />
             <Route path="/register" element={<Register/>} />
             <Route  path="/form" element={<Form set={setNav} func={handleNav}/>} />     
             <Route path="/" element={<Home set={setNav} func={handleNav}/>} />
