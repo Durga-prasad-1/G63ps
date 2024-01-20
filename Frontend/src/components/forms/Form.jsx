@@ -39,20 +39,21 @@ function Form(props){
         return(  <RadioBox yes={object.yes} no={object.no} key={object.key} name={object.name} set={formData} func={setFormData}/>);
     }
 
-    function handleSubmit(event){
+    async function handleSubmit(event){
         event.preventDefault();
         setFormData({
             ...formData,
         });
         try {
-            const response = fetch("",{
+            const response = await fetch("http://localhost:5000/model/prediction",{
                 method: "POST",
                 headers:{
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify(formData),
             });
-            console.log(response);
+            const result = await response.json();
+            console.log(result.msg);
         } catch (error) {
             console.log(error);
         }

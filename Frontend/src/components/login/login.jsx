@@ -89,7 +89,7 @@ function Login(props){
                 const jwttoken = jwtDecode(credentialResponse.credential);
                 props.func(true);
                 console.log(jwttoken);
-                // props.googlefunc(jwttoken); // this is for google authentication
+                props.googlefunc(jwttoken);
             }}
             onError={() => {
                 console.log('Login Failed');
