@@ -12,6 +12,7 @@ import {
     Routes
     
     } from "react-router-dom";
+import { Cookies } from "react-cookie";
 
 
 function App(){
@@ -22,7 +23,7 @@ function App(){
         
             
         <Router>
-            {setNav?<Navbar2 set={setNav} func={handleNav} googleProfile={googleProfile} googlefunc={handleGoogle}/>:<Navbar/>}
+            {setNav ?<Navbar2 set={setNav} func={handleNav} googleProfile={googleProfile} googlefunc={handleGoogle}/>:<Navbar/>}
             <Routes>
                 
             <Route path="/about" element={<Contact/>} />

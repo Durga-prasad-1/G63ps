@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import loginImg from "../images/login.png";
 import { GoogleLogin } from '@react-oauth/google';
 import { jwtDecode } from "jwt-decode"
+import { useCookies } from 'react-cookie';
 
 function Login(props){
 
@@ -87,7 +88,8 @@ function Login(props){
         <GoogleLogin
             onSuccess={credentialResponse => {
                 const jwttoken = jwtDecode(credentialResponse.credential);
-                props.func(true);
+                props.func(true)
+                console.log(credentialResponse.credential);
                 console.log(jwttoken);
                 props.googlefunc(jwttoken);
             }}
