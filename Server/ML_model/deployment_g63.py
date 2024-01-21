@@ -2,14 +2,14 @@ import pickle
 import sys
 import json
 import pandas as pd
+import os
 
-path = "C:/Users/jayan/OneDrive/Documents/KMIT/PS/Thyroid Detection/WebApp/server/ML_model/model.pkl"
-
-with open(path, 'rb') as model_file:
+path = os.getcwd()
+with open(path+"\\ML_model\\model.pkl", 'rb') as model_file:
     model = pickle.load(model_file)
 
 def predict(data):
-    df = pd.DataFrame(data, columns=['age', 'sex', 'TSH', 'T3', 'TT4', 'on_thyroxine', 'query_on_thyroxine', 'on_antithyroid_medication', 'sick', 'pregnant', 'thyroid_surgery', 'I131_treatment', 'query_hypothyroid', 'query_hyperthyroid', 'lithium', 'goitre', 'tumor', 'hypopituitary', 'psych'])
+    df = pd.DataFrame(data, columns=['age', 'sex', 'TSH', 'T3', 'TT4', 'on_thyroxine', 'query_on_thyroxine', 'on_antithyroid_medication', 'sick', 'pregnant', 'thyroid_surgery', 'I131_treatment', 'query_hypothyroid', 'query_hyperthyroid', 'tumor', 'psych'])
     result = model.predict(df)
     return result.tolist()
 
