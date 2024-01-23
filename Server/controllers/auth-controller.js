@@ -72,4 +72,14 @@ const login = async (req, res)=>{
     }
 }
 
-module.exports = { home, register, login };
+//User Data Retrieving Logic
+const user = async (req, res)=>{
+    try {
+        const userData = req.user;
+        return res.json({data:userData});
+    } catch (error) {
+        console.log(`Error in user route ${error}`)
+    }
+}
+
+module.exports = { home, register, login, user };
