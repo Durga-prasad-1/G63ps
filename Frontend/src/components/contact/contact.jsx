@@ -1,7 +1,6 @@
 import React,{useState} from "react";
 import imag from "../images/thinkpng.png"
 import "./contact.css"
-//import { stringify } from "querystring";
 
 
 function Contact(){
@@ -44,26 +43,20 @@ function Contact(){
             
             <img src={imag} alt="think" />
             <div className="contact_con">
+                <h1>Contact us</h1>
             <form onSubmit={contactSubmit} >
-                <label>
-                    Name
-                    <br />
-                    <input type="text"  onChange={contactInput} name="username" id="username" placeholder="Your Name"/>
-                    <br />
-                </label>
-                <label htmlFor="contactEmail">
-                    Email
-                    <br />
-                    <input type="email" name="email" id="email" placeholder="Your Email" onChange={contactInput}/>
-                    <br />
-                </label>
-                <label htmlFor="comment">
-                    Your message
-                    <br />
-                    <textarea rows="6" cols="50" placeholder="Message" name="message" id="comment" onChange={contactInput}/> 
                 
-                    <button type="submit">Submit</button>
-                </label>
+                <label htmlFor="username">Name</label>
+                <input type="text"  onChange={contactInput} name="username" class="contact_username" placeholder="Your Name"/>
+                
+                <label htmlFor="email">Email</label>
+                <input type="email" name="email" class="contact_email" placeholder="Your Email" onChange={contactInput}/>
+                                    
+                <label htmlFor="comment">Message:</label>
+                <textarea rows="6" cols="50" placeholder="Message" name="message" class="contact_comment" onChange={contactInput}/> 
+                
+                <button type="submit" class="contact_button">Submit</button>
+                
                 
             </form>
             </div>
