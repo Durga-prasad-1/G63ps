@@ -6,6 +6,7 @@ import Home from "./home/Home";
 import Contact from "./contact/contact";
 import Register from "./register/register";
 import Navbar2 from  "./navbar/navlink2";
+import Profile from "./profile/profile";
 import {
     BrowserRouter as Router,
     Route,
@@ -36,6 +37,7 @@ function App(){
             <Route path="/register" element={<Register/>} />
             <Route  path="/form" element={<Form set={setNav} func={handleNav}/>} />     
             <Route path="/" element={<Home set={setNav} func={handleNav}/>} />
+            <Route path="/profile" element={<Profile set={setNav} func={handleNav}/>} />
             </Routes>
         </Router>
         
