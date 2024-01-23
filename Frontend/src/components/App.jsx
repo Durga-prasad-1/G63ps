@@ -12,12 +12,16 @@ import {
     Routes
     
     } from "react-router-dom";
-import { Cookies } from "react-cookie";
+import { jwtDecode } from "jwt-decode";
+
 
 
 function App(){
     const [setNav,handleNav] = useState(false);
     // handleNav(setNav);
+    let kk = localStorage.getItem('token');
+    console.log(kk);
+    console.log(jwtDecode(kk));
     const [googleProfile,handleGoogle] = useState(null);
     return(
         

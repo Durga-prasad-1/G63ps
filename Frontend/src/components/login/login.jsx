@@ -3,9 +3,9 @@ import "./login.css";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import loginImg from "../images/login.png";
-import { GoogleLogin } from '@react-oauth/google';
 import { jwtDecode } from "jwt-decode"
-import { useCookies } from 'react-cookie';
+import { GoogleAuthProvider,signInWithPopup } from "firebase/auth";
+import { auth } from "../firebase/fireBase";
 
 function Login(props){
 
@@ -25,6 +25,36 @@ function Login(props){
             [name]: value,
             });
         };
+    /*login */
+    const handleGoogleLogin = (e) =>{
+        const provider = new GoogleAuthProvider();
+        signInWithPopup(auth, provider)
+        .then((result) => {
+        // This gives you a Google Access Token. You can use it to access the Google API.
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        console.log(`credential ${credential}`)
+        const token = credential.accessToken;
+        // The signed-in user info.
+        console.log(`token ${token}`);
+        const user = result.user;
+        // IdP data available using getAdditionalUserInfo(result)
+        console.log(user.accessToken);
+        localStorage.setItem('token',user.accessToken);
+    
+
+        // ...
+        }).catch((error) => {
+        // Handle Errors here.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // The email of the user's account used.
+        const email = error.customData.email;
+        // The AuthCredential type that was used.
+        const credential = GoogleAuthProvider.credentialFromError(error);
+        // ...
+        });
+
+    }
 
     const handleLogin = async (event) => {
         event.preventDefault();
@@ -85,18 +115,7 @@ function Login(props){
             </form>
         </div>
         <div className="div_box" id="bottom">
-        <GoogleLogin
-            onSuccess={credentialResponse => {
-                const jwttoken = jwtDecode(credentialResponse.credential);
-                props.func(true)
-                console.log(credentialResponse.credential);
-                console.log(jwttoken);
-                props.googlefunc(jwttoken);
-            }}
-            onError={() => {
-                console.log('Login Failed');
-            }}
-            />
+        <button onClick={handleGoogleLogin}>sign in</button>
         </div>
     </div>
     </div>
