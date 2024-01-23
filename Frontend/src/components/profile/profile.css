@@ -1,76 +1,139 @@
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 20;
-    padding: 0;
-    background: #28bf96;
-}
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Merienda:wght@500&family=Nunito+Sans:opsz,wght@6..12,500&family=Nunito:ital,wght@0,200;0,300;1,200&family=Outfit:wght@200&family=Playfair+Display&family=Ubuntu:ital,wght@0,400;1,300;1,400&display=swap');
+.contact_con {
+    /* width: 60%; */
+    /* font-family: "Nunito Sans";
+    font-size: 1.5rem;
+    min-height: 30vh;
+    border: 1px solid #333;
+    background-color: #6be0c187;
+    border-radius: 18px; */
 
-.profile-container {
-    max-width: 800px;
-    margin: 50px auto;
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-.profile-picture {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin: 0 auto 20px;
-    border: 5px solid #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-.profile-picture img {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-h2 {
-    color: #333;
     text-align: center;
-    margin-bottom: 10px;
+    
+    
+    
 }
 
-p {
-    text-align: center;
-    color: #666;
-    font-size: 18px;
-    margin-bottom: 20px;
+.contact_con form{
+    
+    
+    /* display: flex;
+
+    flex-direction: column;
+    gap: 2.5rem; */
+    /* justify-content: center;/ */
+    /* align-items: center; */
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+
+    /* margin: 0;
+    padding: 0; */
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    
 }
 
-ul {
-    list-style: none;
-    padding: 0;
-    text-align: center;
-}
+/* .contact_con label,.contact_con input{
+    width: 90%;
+    padding: 0.4rem 0.6rem;
+    
+} */
+/* .contact_con textarea{
+    padding: 0.4rem 0.6rem;
+    font-family: "Nunito Sans";
 
-li {
-    display: inline-block;
-    margin: 0 15px;
-}
+} */
 
-a {
-    text-decoration: none;
-    color: #4caf50;
-    font-size: 16px;
-    transition: color 0.3s;
-}
-
-a:hover {
-    color: #08390b;
-}
-
-button {
-    background-color: #4caf50;
+/* .contact_con button{
+    padding: 0.4rem;
+    width: 40%;
     color: white;
-    padding: 10px 20px;
+    background-color:#0259c4d5 ;
+    border: 1px solid #333;
+    border-radius: 5px;
+
+} */
+
+/* input,
+  textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+  } */
+  
+
+  .conusername,.conemail{
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+
+  .concomment{
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .conbutton {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    font-size: 16px;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+
+.contactGrid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+}
+
+.contactGrid img{
+    width: 450px;
+    margin: auto;
+}
+
+@media (width<900px) {
+    .contactGrid{
+        grid-template-columns: 1fr;
+        
+    }
+    .contact_con{
+        margin: auto;
+    }
+
+    .contact_con textarea{
+        width: 80%;
+    }
+    .contactGrid img{
+        width: 300px;
+    }
+    .contact_con form{
+        gap:1rem;
+    }
 }
