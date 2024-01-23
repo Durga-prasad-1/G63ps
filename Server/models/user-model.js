@@ -38,6 +38,8 @@ userSchema.methods.generateToken = async function(){
         return jwt.sign({
             userId: this._id.toString(),
             email: this.email,
+            name: this.username,
+            picture: null
         },
         process.env.JWT_KEY,
         {expiresIn: "16h"},
