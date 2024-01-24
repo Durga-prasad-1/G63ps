@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Merienda:wght@500&family=Nunito+Sans:opsz,wght@6..12,500&family=Nunito:ital,wght@0,200;0,300;1,200&family=Outfit:wght@200&family=Playfair+Display&family=Ubuntu:ital,wght@0,400;1,300;1,400&display=swap');
 
-.box{
+.box1{
     display: flex;
     justify-content: center;
     align-items: center;
