@@ -37,7 +37,7 @@ function Contact(){
     }
     
     return(
-        <div className="box">
+        <div className="box1">
             <div className="contactGrid">
             
             <img src={imag} alt="think" />
