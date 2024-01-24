@@ -3,6 +3,7 @@ import { NavLink,useNavigate  } from "react-router-dom";
 import Menu from "./menu";
 import AccountMenu from "./task";
 import "./navbar.css"
+import { jwtDecode } from "jwt-decode";
 
 
 function Navbar2(props){
@@ -30,12 +31,8 @@ function Navbar2(props){
         navigate("/");
     }
     //for avatar in img
-    if(props.googleProfile == null){
-        google = null;
-    }
-    else {
-        google = props.googleProfile.picture
-    }
+    let ti = jwtDecode(localStorage.getItem('token')); // to get data in from token and decode it.
+    // console.log(ti);
 
     return(
         <div>
@@ -48,7 +45,7 @@ function Navbar2(props){
                 <li className="link" onClick={scrollToDiv}><span className="bb">About Us</span></li>
                 <li className="link"><NavLink className="bb" to ="/contact">Contact</NavLink></li>
                 <li className="link" ><button className="btn" onClick={showPermission} >Logout</button></li>
-                <li className="googleImg" ><AccountMenu link={google}  func={props.func}/></li>
+                <li className="googleImg" ><AccountMenu link={ti.picture}  func={props.func}/></li>
                 </ul>            
                 <div className="show" onClick={() => setShowMediaIcons(!showMediaIcons)}>
                     <Menu />               

@@ -14,18 +14,23 @@ import { useNavigate,Link  } from "react-router-dom";
 
 export default function AccountMenu(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
-  
+  const navigate = useNavigate();
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
   const handleClose = (event) => {
+    let text="";
     setAnchorEl(null);
     console.log(event.target.innerText);
+    text = event.target.innerText;
+    if (text === "Profile" ){
+      navigate("/profile");
+    }
     // <Resetpass />
     // <Link to="/login" className="none">Login</Link>
   };
-  const navigate = useNavigate();
+ 
     function showPermission(){
     setAnchorEl(null);
 
@@ -91,7 +96,7 @@ export default function AccountMenu(props) {
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
         <MenuItem onClick={handleClose}>
-          <Avatar /> <Link to="/profile">Profile</Link>
+          <Avatar /> Profile
         </MenuItem>
         <MenuItem onClick={handleClose}>
           <Avatar /> Reset password

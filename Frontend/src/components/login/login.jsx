@@ -37,10 +37,11 @@ function Login(props){
         // The signed-in user info.
         console.log(`token ${token}`);
         const user = result.user;
-        // IdP data available using getAdditionalUserInfo(result)
+        // IdP data available using getAdditionalUserInfo(result)'
+        props.func(true);
         console.log(user.accessToken);
         localStorage.setItem('token',user.accessToken);
-    
+        navigate("/");
 
         // ...
         }).catch((error) => {
@@ -51,6 +52,7 @@ function Login(props){
         const email = error.customData.email;
         // The AuthCredential type that was used.
         const credential = GoogleAuthProvider.credentialFromError(error);
+        console.log(`${errorCode} ${errorMessage} ${email} ${credential}`)
         // ...
         });
 
