@@ -25,6 +25,7 @@ function Navbar2(props){
     }
     function nav(){
         notShowPermission();
+        localStorage.removeItem('token');
         props.func(false) // changes the navbar
         navigate("/");
     }

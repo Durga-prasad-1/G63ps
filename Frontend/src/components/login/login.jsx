@@ -71,6 +71,7 @@ function Login(props){
             console.log(data);
             if(response.ok){
                 alert(data.msg);
+                localStorage.setItem('token',data.token);
                 props.func(true);
                 setLogin({username: "", password: ""});
                 navigate("/");

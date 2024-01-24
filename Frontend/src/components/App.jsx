@@ -13,22 +13,23 @@ import {
     Routes
     
     } from "react-router-dom";
-import { jwtDecode } from "jwt-decode";
 
 
 
 function App(){
     const [setNav,handleNav] = useState(false);
     // handleNav(setNav);
-    let kk = localStorage.getItem('token');
+    let kk = "";
+    console.log()
+    kk = localStorage.getItem('token');
     console.log(kk);
-    console.log(jwtDecode(kk));
+    // console.log(jwtDecode(kk));
     const [googleProfile,handleGoogle] = useState(null);
     return(
         
             
         <Router>
-            {setNav ?<Navbar2 set={setNav} func={handleNav} googleProfile={googleProfile} googlefunc={handleGoogle}/>:<Navbar/>}
+            {kk ?<Navbar2 set={setNav} func={handleNav} googleProfile={googleProfile} googlefunc={handleGoogle}/>:<Navbar/>}
             <Routes>
                 
             <Route path="/about" element={<Contact/>} />
