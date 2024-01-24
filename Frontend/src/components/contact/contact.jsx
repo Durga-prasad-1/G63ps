@@ -37,22 +37,21 @@ function Contact(){
     }
     
     return(
-        <div>
-            <h1 style={{fontFamily: "Nunito Sans", padding:"20px"}}> Contact Us</h1>
+        <div className="box">
             <div className="contactGrid">
             
             <img src={imag} alt="think" />
             <div className="contact_con">
-                <h1>Contact us</h1>
+                <h1 className="heading">Contact us</h1>
             <form onSubmit={contactSubmit} >
                 
-                <label htmlFor="username">Name</label>
+                <label className="sideheading"  htmlFor="username">Name</label>
                 <input type="text"  onChange={contactInput} name="username" class="contact_username" placeholder="Your Name"/>
                 
-                <label htmlFor="email">Email</label>
+                <label className="sideheading"  htmlFor="email">Email</label>
                 <input type="email" name="email" class="contact_email" placeholder="Your Email" onChange={contactInput}/>
                                     
-                <label htmlFor="comment">Message:</label>
+                <label className="sideheading"  htmlFor="comment">Message:</label>
                 <textarea rows="6" cols="50" placeholder="Message" name="message" class="contact_comment" onChange={contactInput}/> 
                 
                 <button type="submit" class="contact_button">Submit</button>
