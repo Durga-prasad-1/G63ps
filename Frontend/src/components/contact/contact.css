@@ -1,4 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Merienda:wght@500&family=Nunito+Sans:opsz,wght@6..12,500&family=Nunito:ital,wght@0,200;0,300;1,200&family=Outfit:wght@200&family=Playfair+Display&family=Ubuntu:ital,wght@0,400;1,300;1,400&display=swap');
+
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 85vh;
+}
+
 .contact_con {
     background-color: #fff;
     padding: 20px;
@@ -8,6 +16,14 @@
     width: 100%;
     text-align: center;
     
+}
+
+.heading{
+    font-size: 40px;
+}
+
+.sideheading{
+    font-size: 25px;
 }
 
 .contact_con form{
@@ -44,6 +60,7 @@
     grid-template-columns: 1fr 1fr;
     align-items: center;
     justify-content: center;
+    gap: 15vw;
 }
 
 .contactGrid img{
