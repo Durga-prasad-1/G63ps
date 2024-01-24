@@ -5,16 +5,18 @@ import pic1 from "../images/login.png";
 function Profile(){
 
     return(
+        <div className="rishi_body">
         <div class="profile-container">
         <h3 className="profile_heading">PROFILE</h3>
         <div className="profile-picture">
-            <img src={pic1.png} alt="Profile Picture" />
+            <img src={pic1} alt="Profile Picture" />
         </div>
         <h1 className="profile_name">Arjun</h1>
         <p className="profile_email">Arjunreddy@gmail.com</p>
         <p className="profile_phone">9827827842</p>
         <p className="profile_gender">Male</p>
         <button type="submit" className="profile_button">Update Profile</button>
+    </div>
     </div>
     )
 
