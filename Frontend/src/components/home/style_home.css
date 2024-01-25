@@ -38,27 +38,6 @@ display: flex;
 flex-direction: column;
 }
 
-/* .nav {
-padding: 2rem 1rem;
-display: flex;
-align-items: center;
-justify-content: space-between;
-gap: 1rem;
-}
-
-.nav__logo {
-font-size: 1.5rem;
-font-weight: 600;
-color: var(--primary-color);
-}
-
-.nav__links {
-list-style: none;
-display: flex;
-align-items: center;
-gap: 70px;
-} */
-
 .link .bb {
 text-decoration: none;
 color: var(--text-light);
@@ -114,11 +93,6 @@ width: 450px;
 background-color: var(--primary-color);
 border-radius: 100%;
 z-index: -1;
-}
-
-.image img {
-width: 100%;
-max-width: 475px;
 }
 
 .image__content {
@@ -210,6 +184,11 @@ text-decoration: none;
     background-color: var(--primary-color-dark);
     }
 /*about css */
+.aboutContainer{
+    min-height: 80vh;
+    display: grid;
+    place-content: center;
+}
 .about{
     max-width: 1200px;
     min-height: 30vh;
@@ -229,7 +208,41 @@ text-decoration: none;
     font-weight: bold;
     display: block;
 }
-@media (width < 900px) {
+@media screen and (min-width:1025px){
+    .container{
+        max-width: 1050px;
+    }
+    .image .span .img{
+        width: 300px;
+    }
+    .image__bg{
+        height: 380px;
+        width:380px;
+    }
+    .content h1 {
+        font-size: 2.5rem;
+    }
+    .header .form_button {
+        font-size: 1.7rem;
+    }
+    .about{
+        max-width:1025px;
+    }
+}
+@media screen and (min-width: 1200px) {
+    .container {
+        min-height: 75vh;
+        max-width: 1200px;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        } 
+        .about{
+            max-width:1200px;
+        }
+}
+
+@media screen and (max-width : 481px) {
 /* .nav__links {
     display: none;
 } */

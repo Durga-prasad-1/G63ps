@@ -9,8 +9,7 @@ import Gender from "./Gender";
 
 
 function Form(props){
-    props.func(props.set);
-    console.log(props.set) // this is for navbar status 
+    
     let [formData, setFormData] = useState({
         Name:"",
         Age:"",

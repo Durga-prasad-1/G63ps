@@ -30,13 +30,15 @@ function Home(props){
             </div>
         </header>
         </div>
-        <div className="about" id="about">
-            <img src={about} alt="about" />
-            <p>
-                <span className="abt">ABOUT US:</span>            
-                We leverage advanced machine learning algorithms trained on comprehensive thyroid datasets to deliver insightful predictions. These sophisticated algorithms form the backbone of our platform, enabling us to provide users with invaluable predictions about potential thyroid conditions.
-            </p>
-            
+        <div className="aboutContainer">
+            <div className="about" id="about">
+                <img src={about} alt="about" />
+                <p>
+                    <span className="abt">ABOUT US:</span>            
+                    We leverage advanced machine learning algorithms trained on comprehensive thyroid datasets to deliver insightful predictions. These sophisticated algorithms form the backbone of our platform, enabling us to provide users with invaluable predictions about potential thyroid conditions.
+                </p>
+                
+            </div>
         </div>
         </div>
 
