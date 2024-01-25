@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 function Home(props){
     function setNav(){
-    props.func(true); // this is for navbar status 
+     // this is for navbar status 
     }
     return(
         <div>
