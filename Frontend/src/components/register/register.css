@@ -111,3 +111,21 @@ box-sizing: content-box;
         height: 200px;
     }
 }
+
+@media screen and (min-width:1025px) {
+    .imgFix  {
+        height:300px;
+    }
+    .flex{
+        align-items: center;
+    }
+}
+@media screen and (min-width:1300px){
+    .imgFix {
+        height:400px;
+    }
+    .flex{
+        display: grid;
+        place-content: center;
+    }
+}

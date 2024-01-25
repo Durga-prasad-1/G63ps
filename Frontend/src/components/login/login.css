@@ -163,6 +163,17 @@
     padding-left: 10px;
 }
 
+@media screen and (min-width:1025px) {
+    .imagePos {
+        height:400px;
+    }
+}
+@media screen and (min-width:1300px){
+    .imagePos {
+        height:500px;
+    }
+}
+
 @media (width<900px) {
     .flexes{
         grid-template-columns: 1fr;

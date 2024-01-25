@@ -52,7 +52,7 @@
 
 /*BODY*/
 .main_form{
-    max-height: 80vh;
+    min-height: 80vh;
     background-color: #87D5C0;
     color: #340F0F;
     border-radius: 20px;
