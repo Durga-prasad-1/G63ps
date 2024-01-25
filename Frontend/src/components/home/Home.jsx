@@ -14,7 +14,7 @@ function Home(props){
     <div className="container body">
         
         
-        <header className="header grided">
+        <header className="header">
             <div className="content ">
             <h1><span>Get Quick</span><br />Results</h1>
             <p >
@@ -33,11 +33,12 @@ function Home(props){
         <div className="aboutContainer" id="about">
             <div className="about content" >
                 <img src={about} alt="about" />
+                <div>
                 <p>
                     <span className="abt">ABOUT US:</span>            
                     We leverage advanced machine learning algorithms trained on comprehensive thyroid datasets to deliver insightful predictions. These sophisticated algorithms form the backbone of our platform, enabling us to provide users with invaluable predictions about potential thyroid conditions.
                 </p>
-                
+                </div>
             </div>
         </div>
         </div>

@@ -288,9 +288,19 @@ text-decoration: none;
     justify-self: center;
     align-items: center;
 }
+.about p{
+    grid-template-columns: 0.5fr;
+    width: 100vw;
+}
+.aboutContainer,.about{
+    grid-template-columns: 1fr;
 }
 
-@media (width < 400px){
+.about img{
+    width:350px;
+    height: auto;
+}
+
 .center{
     display: flex;
     justify-self: center;
@@ -305,3 +315,4 @@ text-decoration: none;
     width: 350px;
 }
 }
+
