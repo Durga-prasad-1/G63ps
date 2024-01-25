@@ -7,15 +7,15 @@ import { jwtDecode } from "jwt-decode";
 
 
 function Navbar2(props){
-    let google ; //for avatar img
     const [showMediaIcons, setShowMediaIcons] = useState(false);
+    const navigate = useNavigate();
     const scrollToDiv = () => {
+        navigate('/');
         const element = document.getElementById('about');
         if (element) {
             element.scrollIntoView({ behavior: 'smooth' });
         }
     }
-    const navigate = useNavigate();
     function showPermission(){
         let show = document.querySelector("#permission");
         show.classList.remove("active1");
@@ -31,7 +31,7 @@ function Navbar2(props){
         navigate("/");
     }
     //for avatar in img
-    let ti = jwtDecode(localStorage.getItem('token')); // to get data in from token and decode it.
+    let google = jwtDecode(localStorage.getItem('token')); // to get data in from token and decode it.
     // console.log(ti);
 
     return(
@@ -45,7 +45,7 @@ function Navbar2(props){
                 <li className="link" onClick={scrollToDiv}><span className="bb">About Us</span></li>
                 <li className="link"><NavLink className="bb" to ="/contact">Contact</NavLink></li>
                 <li className="link" ><button className="btn" onClick={showPermission} >Logout</button></li>
-                <li className="googleImg" ><AccountMenu link={ti.picture}  func={props.func}/></li>
+                <li className="googleImg" ><AccountMenu link={google.picture}  func={props.func}/></li>
                 </ul>            
                 <div className="show" onClick={() => setShowMediaIcons(!showMediaIcons)}>
                     <Menu />               

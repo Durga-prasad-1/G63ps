@@ -204,6 +204,7 @@ text-decoration: none;
     height: 300px;
 }
 .abt{
+    color: #111827;
     font-size: large;
     font-weight: bold;
     display: block;
@@ -228,6 +229,9 @@ text-decoration: none;
     .about{
         max-width:1025px;
     }
+    .about img {
+        height: 350px;
+    }
 }
 @media screen and (min-width: 1200px) {
     .container {
@@ -239,6 +243,9 @@ text-decoration: none;
         } 
         .about{
             max-width:1200px;
+        }
+        .about img {
+            height: 400px;
         }
 }
 

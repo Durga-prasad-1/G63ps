@@ -30,8 +30,8 @@ function Home(props){
             </div>
         </header>
         </div>
-        <div className="aboutContainer">
-            <div className="about" id="about">
+        <div className="aboutContainer" id="about">
+            <div className="about content" >
                 <img src={about} alt="about" />
                 <p>
                     <span className="abt">ABOUT US:</span>            
