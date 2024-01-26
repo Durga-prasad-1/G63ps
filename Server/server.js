@@ -24,7 +24,6 @@ app.use(errorMiddleware);
 
 const PORT = 5000;
 
-
 connectDb().then(()=>{
     app.listen(PORT,()=>{
         console.log(`Running on Port ${PORT}`);
