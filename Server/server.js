@@ -7,6 +7,7 @@ const connectDb = require("./utils/db");
 const errorMiddleware = require("./middlewares/error-middleware");
 const contactRoute = require("./router/contact-router");
 const predRoute = require("../server/router/prediction-router");
+const pwdRoute= require("../server/router/password-router");
 
 const corsOptions = {
     origin: "http://localhost:3000",
@@ -20,6 +21,7 @@ app.use(express.json());
 app.use("/auth",router);
 app.use("/",contactRoute);
 app.use("/model",predRoute);
+app.use("/passwords",pwdRoute);
 app.use(errorMiddleware);
 
 const PORT = 5000;
