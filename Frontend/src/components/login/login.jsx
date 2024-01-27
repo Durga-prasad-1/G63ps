@@ -3,7 +3,8 @@ import "./login.css";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import loginImg from "../images/login.png";
-import { jwtDecode } from "jwt-decode"
+import {toast,ToastContainer} from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { GoogleAuthProvider,signInWithPopup } from "firebase/auth";
 import { auth } from "../firebase/fireBase";
 
@@ -41,7 +42,7 @@ function Login(props){
         props.func(true);
         console.log(user.accessToken);
         localStorage.setItem('token',user.accessToken);
-        navigate("/");
+        // setTimeout(navigate('/'),4000);
 
         // ...
         }).catch((error) => {
@@ -72,13 +73,17 @@ function Login(props){
             const data = await response.json();
             console.log(data);
             if(response.ok){
-                alert(data.msg);
+                // alert(data.msg);
                 localStorage.setItem('token',data.token);
                 props.func(true);
                 setLogin({username: "", password: ""});
-                navigate("/");
+                navigate('/?message=Login%20Successful');  // add query params to url to show the toastify msg
+                
             }else{
-                alert(data.msg);
+                // alert(data.msg);
+                toast.error(data.msg,{
+                    position:"top-center"
+                })
             }
         } catch (error) {
             console.log(error);
@@ -115,6 +120,7 @@ function Login(props){
                 <a className="forgot" href="#">Forgot Me?</a>
                 <button type="submit" id="login">Login</button>
                 <div className="div_box" id="extra">------------------or sign in with-------------------</div>
+                <ToastContainer/>
             </form>
         </div>
         <div className="div_box" id="bottom">

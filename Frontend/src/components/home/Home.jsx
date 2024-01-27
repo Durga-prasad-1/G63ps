@@ -2,10 +2,30 @@ import React from "react";
 import "./style_home.css";
 import about from "../images/about1.png"
 import homePhoto from "../images/original.png";
-import { Link } from "react-router-dom";
-
+import { Link,useLocation,useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import {toast,ToastContainer} from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Home(props){
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    useEffect(() => {
+    // Parse the query parameter from the URL
+    const searchParams = new URLSearchParams(location.search);
+    const message = searchParams.get('message');
+    console.log(searchParams);
+    console.log(message);
+    if (message) {
+      // Show toast with the message
+        toast.success(message,{
+            position:"top-center"
+        });
+        navigate('.', { replace: true }); // this is to remove query params from url
+    }
+    }, []);
+
     function setNav(){
      // this is for navbar status 
     }
@@ -40,6 +60,7 @@ function Home(props){
                 </p>
                 </div>
             </div>
+            <ToastContainer autoClose={3000}/> {/*this is for toast msg*/}
         </div>
         </div>
 
