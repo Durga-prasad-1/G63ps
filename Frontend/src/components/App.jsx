@@ -32,7 +32,9 @@ function App(){
         
             
         <Router>
+            <div style={{'position':'sticky', 'top':0 ,'zIndex':80 }}>
             {kk||setNav ?<Navbar2 set={setNav} func={handleNav} googleProfile={googleProfile} googlefunc={handleGoogle}/>:<Navbar/>} {/**kk for token and setNav for first time navbar change */}
+            </div>
             <Routes>
                 
             <Route path="/about" element={<Contact/>} />
