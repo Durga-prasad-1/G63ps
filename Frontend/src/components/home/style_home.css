@@ -315,4 +315,59 @@ text-decoration: none;
     width: 350px;
 }
 }
+.testContainer {
+    min-height: 80vh;
+    display: grid;
+    place-content: center;
+}
+.test {
+    min-height: 30vh;
+    max-width: 1200px;
+    margin: auto;
+    font-family: "Roboto", sans-serif;
+    display: grid;
+    grid-template-columns: auto auto; 
+    grid-template-rows: auto auto; 
+    align-items: start;
+    place-content: center;
+    text-align: center;
+    align-content: start;
+}
 
+.test p {
+    margin-top: 200px;
+}
+
+.test img {
+    max-width: 100%; 
+    height: auto; 
+    grid-column: 2;
+    grid-row: 1 / span 2; 
+}
+
+.tst {
+    color: #111827;
+    font-size: large;
+    font-weight: bold;
+    display: block;
+    grid-column: 1;
+    grid-row: 1; 
+}
+
+.test .form_button {
+    padding: 1rem 2rem;
+    font-size: 2rem;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    margin-top: 1rem;
+    color: #ffffff;
+    cursor: pointer;
+    background-color: #28bf96;
+    grid-column: 1;
+    grid-row: 2; 
+    margin-top: -20px;
+}
+.form_button:hover {
+    background-color: var(--primary-color-dark);
+}
