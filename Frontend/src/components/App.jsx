@@ -6,7 +6,7 @@ import Home from "./home/Home";
 import Contact from "./contact/contact";
 import Register from "./register/register";
 import Navbar2 from  "./navbar/navlink2";
-import Profile from "./profile/profile";
+import ThyroidTestForm from "./test/test";
 import {
     BrowserRouter as Router,
     Route,
@@ -15,35 +15,23 @@ import {
     } from "react-router-dom";
 
 
-
 function App(){
     const [setNav,handleNav] = useState(false);
     // handleNav(setNav);
-    let kk = "";
-    function changeToken(){
-        kk = localStorage.getItem('token');
-    }
-    console.log()
-    kk = localStorage.getItem('token');
-    // console.log(kk);
-    // console.log(jwtDecode(kk));
-    const [googleProfile,handleGoogle] = useState(null);
     return(
         
             
         <Router>
-            <div style={{'position':'sticky', 'top':0 ,'zIndex':80 }}>
-            {kk||setNav ?<Navbar2 set={setNav} func={handleNav} googleProfile={googleProfile} googlefunc={handleGoogle}/>:<Navbar/>} {/**kk for token and setNav for first time navbar change */}
-            </div>
+            {setNav?<Navbar set={setNav} func={handleNav}/>:<Navbar/>}
             <Routes>
                 
             <Route path="/about" element={<Contact/>} />
             <Route path="/contact" element={<Contact/>} />
-            <Route path="/login" element={<Login set={setNav} func={handleNav} googleProfile={googleProfile} googlefunc={handleGoogle}/>} />
+            <Route path="/login" element={<Login set={setNav} func={handleNav}/>} />
             <Route path="/register" element={<Register/>} />
-            <Route  path="/form" element={<Form />} />     
-            <Route path="/" element={<Home/>} />
-            <Route path="/profile" element={<Profile/>} />
+            <Route path="/form" element={<Form set={setNav} func={handleNav}/>} /> 
+            <Route path ="/test" element = {<ThyroidTestForm set={setNav} func={handleNav}/>} />   
+            <Route path="/" element={<Home set={setNav} func={handleNav}/>} />
             </Routes>
         </Router>
         

@@ -27,7 +27,7 @@ function Navbar(){
                 
                 <li className="link" ><NavLink to="/login"   target="_parent"><button className="btn" id="log">Log in</button></NavLink></li>
                 
-                <li className="link" ><NavLink to="/register"  target="_parent"><button className="btn">Register Now</button></NavLink></li>
+                <li className="link" ><NavLink to="/register"  target="_parent"><button className="btn">Register</button></NavLink></li>
                 </ul>            
                 <div className="show" onClick={() => setShowMediaIcons(!showMediaIcons)}>
                 

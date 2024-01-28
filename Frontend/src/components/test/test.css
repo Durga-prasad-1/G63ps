@@ -1,0 +1,80 @@
+.test-container {
+    width: 80%;
+    margin: auto;
+    margin-top: 5vh;
+}
+
+.questions-wrapper {
+    display: flex;
+    background-color: #87D5C0;
+    border-radius: 20px;
+    padding: 15px;
+}
+
+.questions-column {
+    flex: 1;
+}
+
+.question-container {
+    margin-bottom: 20px;
+}
+
+.question-container p {
+    margin-bottom: 10px;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 1.5rem;
+}
+
+.submit-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.submit-button {
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 4px;
+    background-color: crimson;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #660708;
+}
+.radio-buttons-container {
+    display: flex;
+    align-items: center;
+}
+
+.radio-button__label {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.radio-button__input {
+    display: none;
+}
+.radio-button__circle {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid var(--primary-color);
+    margin-right: 10px;
+}
+.radio-button__input:checked + .radio-button__label .radio-button__circle {
+    border-color: #660708;
+}
+
+.radio-button__circle.selected {
+    border-color: #660708;
+}
+
+.radio-button__input:hover + .radio-button__label .radio-button__circle {
+    border-color: #660708;
+}
+

@@ -1,0 +1,73 @@
+  .report_outerarea {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 98vh;
+}
+
+  .report_container {
+    background: #87d5c0;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height:80vh;
+    width: 100vh;
+    border: none;
+    border-radius: 40px;
+  }
+  
+  .report_table {
+    border-collapse: collapse;
+    height: 30%;
+    width: 65%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  th, td {
+    border: none;
+    padding: 4px;
+    text-align: center;
+    font-size: 23px;
+  }
+  
+  .report_result {
+    margin-top: 30px;
+    margin-bottom: 50px;
+    padding: 15px;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .report_buttons {
+    display: flex;
+    gap: 80px;
+  }
+  
+  .report_button {
+    padding: 10px;
+    font-size: 25px;
+    background-color: #5046d9;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: #440dba 0.3s ease;
+  }
+  
+  .report_button:hover {
+    background-color: #440dba;
+  }
+  
