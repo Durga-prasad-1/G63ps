@@ -1,6 +1,6 @@
 const { model } = require("mongoose");
 const pred_model = require("../models/prediction-model");
-const { execFile } = require("child-process");
+const { PythonShell } = require("python-shell");
 
 const predictForm = async (req, res) => {
     try {
