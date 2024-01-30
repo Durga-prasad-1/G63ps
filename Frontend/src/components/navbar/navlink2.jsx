@@ -36,7 +36,7 @@ function Navbar2(props){
 
     return(
         <div>
-        <nav id="nave">
+        <nav className="nav">
             <div className="nav__logo">Thyroid Detection</div>
                 <ul className={
                 showMediaIcons ? "nav__links mobile_menu_links" : "nav__links"

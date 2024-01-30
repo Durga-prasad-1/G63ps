@@ -1,4 +1,4 @@
-.nav,#nave {
+.nav {
     padding: 1rem 1rem 1rem 1rem;
     display: flex;
     align-items: center;
@@ -10,6 +10,17 @@
     box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
     }
     
+    #nave {
+        padding: 1rem 1rem 1rem 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-family: "Roboto", sans-serif;
+        gap: 1rem;
+        max-width: 100vw;
+        background-color: white;
+        box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+        }
     .nav__logo {
     font-size: 1.5rem;
     font-weight: 600;

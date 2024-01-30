@@ -1,8 +1,29 @@
 import React, { useState } from 'react';
+import TestQuestions from '../../RadiosData/testQuestions';
 import "./test.css";
+import RadioBox from '../forms/RadioBox';
 
 function ThyroidTestForm() {
-    const [answers, setAnswers] = useState({});
+    const [answers, setAnswers] = useState({
+        S1:"",
+        S2:"",
+        S3:"",
+        S4:"",
+        S5:"",
+        S6:"",
+        S7:"",
+        S8:"",
+        S9:"",
+        S10:"",
+        S11:"",
+        S12:"",
+        S13:"",
+        S14:"",
+        S15:"",
+        S16:""
+
+
+    });
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 
     const symptoms = [
@@ -30,47 +51,60 @@ function ThyroidTestForm() {
 
     const handleSubmit = () => {
         // Handle submission logic here
+        console.log(answers);
+        console.log(Object.values(answers));
         setCurrentQuestionIndex(currentQuestionIndex + 1);
     };
+    function Details(object){
+        return(<RadioBox yes={object.yes} no={object.no} key={object.key} name={object.question} set={answers} func={setAnswers} />)
+    }
 
     return (
+        // <div className="test-container">
+        //     <div className="questions-wrapper">
+        //         <div className="questions-column">
+        //             {symptoms.map((question, index) => (
+        //                 <div key={index} className="question-container">
+        //                     <p>{index + 1}. {question}</p>
+        //                     <div className="radio-buttons-container">
+        //                         <label className="radio-button__label">
+        //                             <input
+        //                                 type="radio"
+        //                                 className="radio-button__input"
+        //                                 name={`question${index}`}
+        //                                 onChange={() => handleAnswerChange(index, 'Yes')}
+        //                             />
+        //                             <span className={`radio-button__circle ${answers[index] === 'Yes' ? 'selected' : ''}`}></span>
+        //                             Yes
+        //                         </label>
+        //                         <label className="radio-button__label">
+        //                             <input
+        //                                 type="radio"
+        //                                 className="radio-button__input"
+        //                                 name={`question${index}`}
+        //                                 onChange={() => handleAnswerChange(index, 'No')}
+        //                             />
+        //                             <span className={`radio-button__circle ${answers[index] === 'No' ? 'selected' : ''}`}></span>
+        //                             No
+        //                         </label>
+        //                     </div>
+        //                     {index === symptoms.length - 1 && (
+        //                         <div className="submit-container">
+        //                             <button className="submit-button" onClick={handleSubmit}>Submit</button>
+        //                         </div>
+        //                     )}
+        //                 </div>
+        //             ))}
+        //         </div>
+        //     </div>
+        // </div>
+        <div>
         <div className="test-container">
-            <div className="questions-wrapper">
-                <div className="questions-column">
-                    {symptoms.map((question, index) => (
-                        <div key={index} className="question-container">
-                            <p>{index + 1}. {question}</p>
-                            <div className="radio-buttons-container">
-                                <label className="radio-button__label">
-                                    <input
-                                        type="radio"
-                                        className="radio-button__input"
-                                        name={`question${index}`}
-                                        onChange={() => handleAnswerChange(index, 'Yes')}
-                                    />
-                                    <span className={`radio-button__circle ${answers[index] === 'Yes' ? 'selected' : ''}`}></span>
-                                    Yes
-                                </label>
-                                <label className="radio-button__label">
-                                    <input
-                                        type="radio"
-                                        className="radio-button__input"
-                                        name={`question${index}`}
-                                        onChange={() => handleAnswerChange(index, 'No')}
-                                    />
-                                    <span className={`radio-button__circle ${answers[index] === 'No' ? 'selected' : ''}`}></span>
-                                    No
-                                </label>
-                            </div>
-                            {index === symptoms.length - 1 && (
-                                <div className="submit-container">
-                                    <button className="submit-button" onClick={handleSubmit}>Submit</button>
-                                </div>
-                            )}
-                        </div>
-                    ))}
-                </div>
-            </div>
+            {TestQuestions.map(Details)}
+        </div>
+        <div className="submit-container">
+            <button className="submit-button" onClick={handleSubmit}>Submit</button>
+        </div>
         </div>
     );
 }
