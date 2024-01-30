@@ -8,11 +8,11 @@ import Register from "./register/register";
 import Profile from "./profile/profile";
 import Navbar2 from  "./navbar/navlink2";
 import ThyroidTestForm from "./test/test";
+import ResetPassword from "./resetPassword/resetpassword";
 import {
     BrowserRouter as Router,
     Route,
     Routes
-    
     } from "react-router-dom";
 
 
@@ -43,8 +43,10 @@ function App(){
             <Route path="/register" element={<Register/>} />
             <Route path="/profile" element={<Profile/>} />
             <Route path="/form" element={<Form />} /> 
+            <Route path="/resetPassword" element={<ResetPassword />} />
             <Route path ="/test" element = {<ThyroidTestForm />} />   
             <Route path="/" element={<Home />} />
+            
             </Routes>
         </Router>
         
