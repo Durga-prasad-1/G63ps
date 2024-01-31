@@ -14,7 +14,7 @@ function ResetPassword(){
     });
 
   }
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     try {
       const token = localStorage.getItem("token");
