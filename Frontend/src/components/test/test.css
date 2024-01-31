@@ -2,6 +2,10 @@
     width: 80%;
     margin: auto;
     margin-top: 5vh;
+    background-color: #78dcc1;
+    border-radius: 15px;
+    padding-top: 20px;
+    padding-bottom: 30px;
 }
 
 .questions-wrapper {
