@@ -3,9 +3,12 @@ const User = require("../models/user-model");
 //Reset Password Logic
 const resetPwd = async (req, res)=>{
     try {
-        const {currPwd, newPwd, confirmPwd} = req.body;
+        const {Password, NewPassword, ConfirmPassword} = req.body;
         const userData = req.user;
         const isPwdValid = await userData.PasswordCheck(currPwd);
+        if(NewPassword==ConfirmPassword){
+            res.status(400).json({msg:"Both Passwords cannot be same"});
+        }
         if(!isPwdValid){
             res.status(400).json({msg:"Invalid Password."});
         }
@@ -13,11 +16,11 @@ const resetPwd = async (req, res)=>{
             res.status(400).json({msg:"Passwords don't match."});
         }
         userData.password=newPwd;
-        userData.save();
+        await userData.save();
         res.status(200).json({msg:"Password changed successfully."});
     } catch (error) {
-        res.status(500).json({msg:"Internal Server Error."});
         console.log("Error in Reset password",error);
+        res.status(500).json({msg:"Internal Server Error."});
     }
 }
 
