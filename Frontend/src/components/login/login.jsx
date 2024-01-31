@@ -70,7 +70,7 @@ function Login(props){
         event.preventDefault();
         console.log(user);
         try {
-            const response = await fetch("https://thyro-aid.vercel.app/auth/login",{
+            const response = await fetch("https://thyroaid.onrender.com/auth/login",{
                 method: "POST",
                 headers:{
                     "Content-Type": "application/json",
