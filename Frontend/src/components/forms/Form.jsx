@@ -41,7 +41,7 @@ function Form(props){
             ...formData,
         });
         try {
-            const response = await fetch("https://thyro-aid.vercel.app/model/prediction",{
+            const response = await fetch("https://thyroaid.onrender.com/model/prediction",{
                 method: "POST",
                 headers:{
                     "Content-Type": "application/json",
