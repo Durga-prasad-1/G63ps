@@ -36,23 +36,12 @@ const radio = [
         key:6
     },
     {
-        name:"Goitre",
-        yes :"Yes6",
-        no : "No6",
-        key:7
-    },
-    {
         name:"Tumor",
         yes :"Yes7",
         no : "No7",
         key:8
     },
-    {
-        name:"Hypopituitary",
-        yes :"Yes8",
-        no : "No8",
-        key:9
-    },
+    
     {
         name:"Psych",
         yes :"Yes9",
@@ -77,12 +66,6 @@ const radio = [
         no: "no12",
         key:13
     },
-    {
-        name:"Lithium",
-        yes:"yes13",
-        no:"no13",
-        key:14
-    }
 ];
 
 export default radio;

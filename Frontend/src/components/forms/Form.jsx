@@ -26,10 +26,7 @@ function Form(props){
         I131Treatment:"",
         QueryHypothyroid:"",
         QueryHyperthyroid:"",
-        Lithium:"",
-        Goitre:"",
         Tumor:"",
-        Hypopituitary:"",
         Psych:"",
                 
     });

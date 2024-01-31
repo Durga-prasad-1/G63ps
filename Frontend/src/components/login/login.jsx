@@ -17,6 +17,8 @@ function Login(props){
         password: "",
         });
 
+    const [showPassword, setShowPassword] = useState(false);
+    
     const handleInput = (event) => {
         let name = event.target.name;
         let value = event.target.value;
@@ -26,6 +28,11 @@ function Login(props){
             [name]: value,
             });
         };
+
+    const handleTogglePassword = () => {
+        setShowPassword(!showPassword);
+      };
+    
     /*login */
     const handleGoogleLogin = (e) =>{
         const provider = new GoogleAuthProvider();
@@ -91,7 +98,16 @@ function Login(props){
     };
 
 
+    function showPermission(){
+        let show = document.querySelector("#permission1");
+        show.classList.remove("active1");
+    }
 
+    function notShowPermission(){
+        let show = document.querySelector("#permission1");
+        show.classList.add("active1");
+    }
+    
     return(
         <div className="flexes">
             <img src={loginImg} alt="loginImage"  className="imagePos" />
@@ -108,16 +124,21 @@ function Login(props){
                 </div>
                 <div className="div_box" id="password">
                     <label htmlFor="pass">Enter Password:</label>
-                    <input id="pass" className="putted" type="password" onChange={handleInput} placeholder="Password" name="password"/>
-                    <i className="fa fa-lock"></i>
+                    <input id="pass" className="putted" type={showPassword ? "text" : "password"} onChange={handleInput} placeholder="Password" name="password"/>
                 </div>
 
-                <div className="div_box" id="Remember">
-                    <label htmlFor="rem">
-                        <input type="radio" className="putted" id="rem"/>Remember me
+                <div className="div_box" id="Showpass1">
+                    <label htmlFor="showPass">
+                    <input
+                    type="checkbox"
+                    id="showPass"
+                    checked={showPassword}
+                    onChange={handleTogglePassword}
+                    />
+                    Show Password
                     </label>
                 </div>
-                <a className="forgot" href="#">Forgot Me?</a>
+                <a className="forgot" onClick={showPermission}>Forgot Me?</a>
                 <button type="submit" id="login">Login</button>
                 <div className="div_box" id="extra">------------------or sign in with-------------------</div>
                 <ToastContainer/>
@@ -127,6 +148,25 @@ function Login(props){
         <button onClick={handleGoogleLogin}>sign in</button>
         </div>
     </div>
+
+    <div className="permission1 active1" id="permission1">
+            <div className="enter_mail">
+                <div className="email_box">
+                <h6>Enter your email ID ?</h6>
+                <button style={{height:"20px",cursor:"pointer",backgroundColor:"white",border:"0"}} onClick={notShowPermission}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" >
+                    <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+                </svg>
+                </button>
+                </div>                
+                <div className="mail_btn">
+                    <input placeholder="Eg: Rishi@gmail.com" className="login_mail" style={{ fontSize: '20px' }}/>
+                    <button className="butn1">Submit</button>
+                </div>
+            </div>
+            </div>
+
+            
     </div>
     );
 
