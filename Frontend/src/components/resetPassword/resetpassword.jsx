@@ -16,6 +16,25 @@ function ResetPassword(){
   }
   const handleSubmit = (event) => {
     event.preventDefault();
+    try {
+      const token = localStorage.getItem("token");
+      const response = await fetch("http://localhost:5000/passwords/resetPassword",{
+        method: "POST",
+        headers:{
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${token}`,
+        },
+        body: JSON.stringify(data),
+      });
+      const res_data = await response.json();
+      if(response.ok){
+        alert(res_data.msg);
+      }else{
+        alert(res_data.msg);
+      }
+    } catch (error) {
+      console.log(error);
+    }
     setData({...data});
     console.log(data);
   }
