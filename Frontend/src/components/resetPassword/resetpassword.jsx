@@ -18,7 +18,7 @@ function ResetPassword(){
     event.preventDefault();
     try {
       const token = localStorage.getItem("token");
-      const response = await fetch("https://thyro-aid.vercel.app/passwords/resetPassword",{
+      const response = await fetch("https://thyroaid.onrender.com/passwords/resetPassword",{
         method: "POST",
         headers:{
           "Content-Type": "application/json",
