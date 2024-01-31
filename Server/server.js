@@ -6,8 +6,8 @@ const router = require("./router/auth-router");
 const connectDb = require("./utils/db");
 const errorMiddleware = require("./middlewares/error-middleware");
 const contactRoute = require("./router/contact-router");
-const predRoute = require("../server/router/prediction-router");
-const pwdRoute= require("../server/router/password-router");
+const predRoute = require("../Server/router/prediction-router");
+const pwdRoute= require("../Server/router/password-router");
 
 const corsOptions = {
     origin: "http://localhost:3000",
