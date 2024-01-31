@@ -26,7 +26,7 @@ function Register(){
         e.preventDefault();
         console.log(user);
         try {
-            const response = await fetch("https://thyro-aid.vercel.app/auth/register", {
+            const response = await fetch("https://thyroaid.onrender.com/auth/register", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
