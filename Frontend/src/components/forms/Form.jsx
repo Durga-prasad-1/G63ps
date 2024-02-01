@@ -1,14 +1,15 @@
 import React,{useState} from "react";
+import { useNavigate } from "react-router-dom";
 import "./form.css"
 import radio from "../../RadiosData/radioData";
 import RadioBox from "./RadioBox";
 import Input from "./Input";
 import Name from "./nameGender";
-import Gender from "./Gender";
 
 
 
 function Form(props){
+    let navigate = useNavigate();
     
     let [formData, setFormData] = useState({
         Name:"",
@@ -53,6 +54,7 @@ function Form(props){
         } catch (error) {
             console.log(error);
         }
+        navigate("/outputPage");
         console.log(formData);
     }
 
@@ -66,9 +68,9 @@ function Form(props){
                         <RadioBox yes={"yes30"} no={"no30"} key={30} name={"Gender"} set={formData} func={setFormData}/>
                         <Input type="number" name="Age" key="Age" set={formData} func={setFormData}/>
                         {radio.map(Details)}
-                        <Input name="TSH" key="TSH" set={formData} func={setFormData}/>
-                        <Input name="T3" key="T3" set={formData} func={setFormData}/>
-                        <Input name="TT4" key="TT4" set={formData} func={setFormData}/>                                   
+                        <div id="Tsh"><Input name="TSH" key="TSH" set={formData} func={setFormData}/></div>
+                        <div id="T3"><Input name="T3" key="T3" set={formData} func={setFormData}/></div>
+                        <div id="Tt4"><Input name="TT4" key="TT4" set={formData} func={setFormData}/></div>                                   
                     </div>
                     <div className="button_class" >
                         <button className="_button" type="submit" value="Submit">Submit</button>

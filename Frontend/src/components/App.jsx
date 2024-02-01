@@ -9,6 +9,7 @@ import Profile from "./profile/profile";
 import Navbar2 from  "./navbar/navlink2";
 import ThyroidTestForm from "./test/test";
 import ResetPassword from "./resetPassword/resetpassword";
+import Report from "./outputPage/output";
 import {
     BrowserRouter as Router,
     Route,
@@ -20,9 +21,6 @@ function App(){
     const [setNav,handleNav] = useState(false);
     // handleNav(setNav);
     let kk = "";
-    function changeToken(){
-        kk = localStorage.getItem('token');
-    }
     console.log()
     kk = localStorage.getItem('token');
     // console.log(kk);
@@ -44,7 +42,8 @@ function App(){
             <Route path="/profile" element={<Profile/>} />
             <Route path="/form" element={<Form />} /> 
             <Route path="/resetPassword" element={<ResetPassword />} />
-            <Route path ="/test" element = {<ThyroidTestForm />} />   
+            <Route path ="/test" element = {<ThyroidTestForm />} />  
+            <Route path ="/outputPage" element = {<Report />} /> 
             <Route path="/" element={<Home />} />
             
             </Routes>
