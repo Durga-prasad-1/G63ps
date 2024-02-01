@@ -110,6 +110,27 @@
     border: solid 3px black;
 }
 
+.google_button{
+    padding: 5px;
+    text-align: center;
+    width: 30%;
+    display: flex; 
+    gap: 10px;
+    background-color: white;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-radius: 5px;
+    border: none;
+}
+
+.login_google_img{
+    width: 20%;
+}
+
+.google_button:hover{
+    cursor: pointer;
+    width: 32%;
+}
+
 #extra{
     color: gray;
     position: relative;
