@@ -17,7 +17,7 @@ function Navbar(){
 
     return(
         <nav className="nav">
-            <div className="nav__logo">Thyroid Detection</div>
+            <div className="nav__logo">Thyro-Aid</div>
                 <ul className={
                 showMediaIcons ? "nav__links mobile_menu_links" : "nav__links"
                 }>
