@@ -133,7 +133,9 @@
     list-style:none;
 }
 /*-----------------------------------*/
-
+.menushow{
+    display: none;
+}
 /*--------------------------------*/
 @media screen and (min-width:1200px) {
     .decisionMaking{
@@ -163,6 +165,13 @@
 }
 
 @media screen and (max-width:481px) {
+
+    .menushow{
+        display: block;
+    }
+    .googleImg{
+        display: none;
+    }
     .nav{
         display: flex;
         height: 5rem;
@@ -186,16 +195,16 @@
     }
     .mobile_menu_links {
         background-color: white;
-        height: 20rem;
+        /* height: 20rem; */
         z-index: 99;
         
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding:0% 5%;
+        padding:5% 5%;
         transition: all 2s linear;
-        gap: 30px;
+        gap: 20px;
         transform-origin: top;
         box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
         rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;

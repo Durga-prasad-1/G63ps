@@ -4,6 +4,12 @@ import Menu from "./menu";
 import AccountMenu from "./task";
 import "./navbar.css"
 import { jwtDecode } from "jwt-decode";
+import ListItemIcon from '@mui/material/ListItemIcon';
+import MenuItem from '@mui/material/MenuItem';
+import Logout from '@mui/icons-material/Logout';
+import Avatar from '@mui/material/Avatar';
+
+
 
 
 function Navbar2(props){
@@ -34,6 +40,21 @@ function Navbar2(props){
     let google = jwtDecode(localStorage.getItem('token')); // to get data in from token and decode it.
     // console.log(ti);
 
+    // this is for profile , logout, reset password
+    const handleClose = (event) => {
+        let text="";
+        console.log(event.target.innerText);
+        text = event.target.innerText;
+        if (text === "Profile" ){
+            navigate("/profile");
+        }
+        if (text === "Reset password" ){
+            navigate("/resetPassword");
+        }
+        // <Resetpass />
+        // <Link to="/login" className="none">Login</Link>
+    };
+    
     return(
         <div>
         <nav className="nav">
@@ -46,6 +67,27 @@ function Navbar2(props){
                 <li className="link"><NavLink className="bb" to ="/contact">Contact</NavLink></li>
                 <li className="link" ><button className="btn" onClick={showPermission} >Logout</button></li>
                 <li className="googleImg" ><AccountMenu link={google.picture}  func={props.func}/></li>
+                <li className="menushow">
+                    <MenuItem onClick={handleClose}>
+                        <Avatar /> Profile
+                    </MenuItem></li>
+                <li className="menushow">
+                <MenuItem onClick={handleClose}>
+                    <Avatar /> Reset password
+                </MenuItem>
+                </li>
+                <li className="menushow">
+                    <MenuItem onClick={handleClose}>
+                    <Avatar /> History
+                </MenuItem></li>
+                <li className="menushow">
+                <MenuItem className='logout' onClick={showPermission}>
+                    <ListItemIcon>
+                        <Logout fontSize="small" />
+                    </ListItemIcon>
+                    Logout
+                </MenuItem>
+                </li>
                 </ul>            
                 <div className="show" onClick={() => setShowMediaIcons(!showMediaIcons)}>
                     <Menu />               
