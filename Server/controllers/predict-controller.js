@@ -34,7 +34,7 @@ const predictForm = async (req, res) => {
 
     } catch (error) {
         console.log("Error:",error);
-        res.status(500).json({ error: "Internal Server Error" });
+        res.status(500).json({ error});
         return;
     }
 };
