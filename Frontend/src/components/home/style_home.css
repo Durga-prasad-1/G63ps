@@ -217,12 +217,11 @@ text-decoration: none;
 }
 .test {
     min-height: 30vh;
-    max-width: 1200px;
-    margin: auto;
+    /* max-width: 1200px; */
+    /* margin: auto; */
     font-family: "Roboto", sans-serif;
     display: grid;
-    grid-template-columns: auto auto; 
-    grid-template-rows: auto auto; 
+    grid-template-columns: 1fr 1fr; 
     align-items: start;
     place-content: center;
     text-align: center;
@@ -245,8 +244,7 @@ text-decoration: none;
     font-size: large;
     font-weight: bold;
     display: block;
-    grid-column: 1;
-    grid-row: 1; 
+    padding:  10px 2px;
 }
 
 .test .form_button {
@@ -258,10 +256,9 @@ text-decoration: none;
     margin-top: 1rem;
     color: #ffffff;
     cursor: pointer;
-    background-color: #28bf96;
-    grid-column: 1;
-    grid-row: 2; 
-    margin-top: -20px;
+    background-color: #28bf96; 
+    /* margin-top: -20px; */
+    width: 50%;
 }
 .form_button:hover {
     background-color: var(--primary-color-dark);
@@ -315,11 +312,19 @@ text-decoration: none;
     padding: 16px 16px 16px 0px;
     grid-template-columns: 1fr
 }
-
-.content {
+.header .content{
     padding-top: 25rem;
     text-align: center;
 }
+.aboutContainer .content {
+    padding-top: 10rem;
+    padding-bottom: 5rem;
+    text-align: center;
+    /* background-color: red; */
+}
+/* .content:nth-child(2){
+    text-align: center;
+} */
 
 .image {
     grid-area: 1/1/2/2;
@@ -354,8 +359,9 @@ text-decoration: none;
 }
 
 .about img{
-    width:350px;
+    width:340px;
     height: auto;
+    margin: 0 auto;
 }
 
 .center{
@@ -370,5 +376,20 @@ text-decoration: none;
     transform: translate(-50%,0%);
     height: 350px;
     width: 350px;
+}
+.test{
+    grid-template-columns: 1fr;
+}
+.test img {
+    max-width: 70%;  
+    grid-column: 1;
+    grid-row: 1;
+    margin: 0 auto;
+}
+.test p {
+    margin-top: 50px;
+}
+.test .form_button{
+    font-size: 1.5rem;
 }
 }

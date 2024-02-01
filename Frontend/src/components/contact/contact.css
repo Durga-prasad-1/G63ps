@@ -104,15 +104,18 @@
     }
     .contact_con{
         margin: auto;
-    }
-
-    .contact_con textarea{
         width: 80%;
+    }
+    .contact_username,.contact_email,.contact_comment{
+        margin-bottom: 0px;
+    }
+    .contact_con textarea{
+        width: 90%;
     }
     .contactGrid img{
         width: 300px;
     }
     .contact_con form{
-        gap:1rem;
+        gap: 0.7rem;
     }
 }

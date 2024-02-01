@@ -22,7 +22,7 @@
         box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
         }
     .nav__logo {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 600;
     color: var(--primary-color);
     }
@@ -138,10 +138,12 @@
     @media (width < 900px) {
         .nav{
             display: flex;
-            height: 7rem;
+            height: 5rem;
     /* grid-template-columns: 2rem 2fr 3fr 2rem 2rem; */
         }
-
+        .nav__logo{
+            font-size: 1.5rem;
+        }
         .nav__links {
             display: none;
             align-self: flex-start;
