@@ -53,10 +53,11 @@
 /*BODY*/
 .main_form{
     min-height: 80vh;
-    background-color: #87D5C0;
+    background-color: #8bdbc6ac;
     color: #340F0F;
     border-radius: 20px;
     padding: 15px;
+    box-shadow: rgba(100, 100, 111, 0.5) 0px 7px 29px 0px;
     
 }
 
@@ -82,6 +83,19 @@
 .box  .input{
     padding: 10px;
     width: 80%;
+}
+
+#T3{
+    grid-column: 2;
+    grid-row: 6;
+}
+#Tsh{
+    grid-column: 1 ;
+    grid-row: 6;
+}
+#Tt4{
+    grid-row: 6;
+    grid-column: 3;
 }
 ::selection{
     background-color: crimson;
@@ -136,3 +150,18 @@
         border-color: var(--radio-color);
         box-shadow: 0 0 10px var(--radio-color);
     }
+@media screen and (max-width:481px) {
+    .form{
+        grid-template-columns: 1fr;
+    }
+    ._button{
+        width: 50%;
+    }
+    .box .input{
+        width: 90%;
+    }
+    #Tsh,#Tt4,#T3{
+        grid-column: initial;
+        grid-row: initial;
+    }
+}

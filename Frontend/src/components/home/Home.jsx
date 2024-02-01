@@ -51,6 +51,17 @@ function Home(props){
             </div>
         </header>
         
+        
+        <div className="test" id="test">
+            <img src={Test} alt="test"/>
+            <div>
+            <p>
+                    <span className="tst">CONFUSED ABOUT TAKING THYROID TEST?</span>
+                    Feeling hesitant? Many people have similar feelings when faced with medical tests. Your health is precious, and taking this step showcases your commitment to self-care. Remember to seek support from healthcare professionals who can guide you through this process with care and expertise.Here's a test that can provide valuable insight into your thyroid health.
+            </p> 
+            <Link to="/test"><button className="form_button" onClick={setNav}>Take Test</button></Link>
+            </div>
+        </div>
         <div className="aboutContainer" id="about">
         <div className="about content" >
             <img src={about} alt="about" />
@@ -59,14 +70,6 @@ function Home(props){
                     We leverage advanced machine learning algorithms trained on comprehensive thyroid datasets to deliver insightful predictions. These sophisticated algorithms form the backbone of our platform, enabling us to provide users with invaluable predictions about potential thyroid conditions.
                 </p>
             </div>
-        </div>
-        <div className="test" id="test">
-            <img src={Test} alt="test"/>
-            <p>
-                    <span className="tst">CONFUSED ABOUT TAKING THYROID TEST?</span>
-                    Feeling hesitant? Many people have similar feelings when faced with medical tests. Your health is precious, and taking this step showcases your commitment to self-care. Remember to seek support from healthcare professionals who can guide you through this process with care and expertise.Here's a test that can provide valuable insight into your thyroid health.
-            </p> 
-            <Link to="/test"><button className="form_button" onClick={setNav}>Take Test</button></Link>
         </div>
         <ToastContainer autoClose={3000}/> {/*this is for toast msg*/}
         </div>
