@@ -205,7 +205,7 @@
     text-align: center;
     cursor: pointer;
     border-radius: 7px;
-    border: 1px solid #333;
+    border: 0;
     font-size: 20px;
     background-color: var(--primary-color);
     color: rgb(245, 238, 238);
@@ -222,6 +222,10 @@
 .login_mail{
     width: 70%;
     height: 50%;
+}
+.mail_btn input{
+    font-size: 20px;
+    padding: 5px;
 }
 
 @media screen and (min-width:1025px) {
@@ -241,5 +245,23 @@
     }
     .imagePos{
         height: 300px;
+    }
+    .enter_mail {
+        width: 75%;
+        left: 12.5%;
+        height: 30%;
+    }
+    .mail_btn {
+        flex-direction: column;
+        padding-top: 30px;
+    }
+    .mail_btn input{
+        font-size: 1rem;
+        padding: 7px;
+        width: 80%;
+    }
+    .butn1{
+        font-size: 15px;
+        width: 80%;
     }
 }
