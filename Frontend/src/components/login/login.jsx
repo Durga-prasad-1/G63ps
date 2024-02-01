@@ -7,6 +7,7 @@ import {toast,ToastContainer} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { GoogleAuthProvider,signInWithPopup } from "firebase/auth";
 import { auth } from "../firebase/fireBase";
+import google1 from "../images/search.png";
 
 function Login(props){
 
@@ -145,7 +146,7 @@ function Login(props){
             </form>
         </div>
         <div className="div_box" id="bottom">
-        <button onClick={handleGoogleLogin}>sign in</button>
+        <button className="google_button" onClick={handleGoogleLogin}><img className="login_google_img" src={google1}/> Google</button>
         </div>
     </div>
 
