@@ -87,6 +87,7 @@
     position: relative;
     left: 95px;
     text-decoration: none;
+    cursor: pointer;
 }
 .none {
     text-decoration: none;
@@ -161,6 +162,66 @@
 }
 .form{
     padding-left: 10px;
+}
+
+
+.permission1{
+    width: 100%;
+    position: fixed;
+    height: 100%;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.245);
+    z-index: 100;
+}
+
+.enter_mail{
+    width: 35%;
+    height: 20vh;
+    top: 40%;
+    left: 35%;
+    /* margin: 0px 50vw; */
+    position: fixed;
+    background-color: white;
+    border-radius: 15px;
+    /* border: 1px solid #333; */
+    z-index: 55;
+}
+.enter_mail h6{
+    font-size: 20px;
+    font-weight: 2;
+    /* display: flex; */
+    /* justify-content: space-between; */
+    font-family: Roboto,sans-serif;
+}
+.mail_btn{
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.butn1{
+    padding: 8px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 7px;
+    border: 1px solid #333;
+    font-size: 20px;
+    background-color: var(--primary-color);
+    color: rgb(245, 238, 238);
+}
+
+.email_box{
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+
+} 
+
+.login_mail{
+    width: 70%;
+    height: 50%;
 }
 
 @media screen and (min-width:1025px) {
