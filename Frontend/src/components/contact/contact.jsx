@@ -1,6 +1,7 @@
 import React,{useState} from "react";
-import imag from "../images/thinkpng.png"
-import "./contact.css"
+import imag from "../images/thinkpng.png";
+import { useNaviagte } from "react-router-dom";
+import "./contact.css";
 
 
 function Contact(){
@@ -31,6 +32,12 @@ function Contact(){
                 body: JSON.stringify(contactdata),
             });
             console.log(response);
+            if(response.ok){
+                alert(response.msg);
+                naviagte("/");
+            }else{
+                alert(response.msg);
+            }
         } catch (error) {
             console.log(error);
         }
