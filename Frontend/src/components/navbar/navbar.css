@@ -137,7 +137,13 @@
     display: none;
 }
 /*--------------------------------*/
-@media screen and (min-width:1300px) {
+@media screen and (min-width:1025px){
+    .decisionMaking{
+        height:20%;
+    }
+}
+
+@media screen and (min-width:1200px) {
     .decisionMaking{
         width: 30%;
         height: 17vh;
@@ -158,11 +164,7 @@
         font-family: Roboto,sans-serif;
     }
 }
-@media screen and (min-width:1025px){
-    .decisionMaking{
-        height:30%;
-    }
-}
+
 
 @media screen and (max-width:481px) {
 
@@ -220,6 +222,6 @@
         .decisionMaking {
             width: 75%;
             left: 12.5%;
-            height: 25%;
+            height: 20%;
         }
 }    
