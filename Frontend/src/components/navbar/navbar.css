@@ -137,7 +137,7 @@
     display: none;
 }
 /*--------------------------------*/
-@media screen and (min-width:1200px) {
+@media screen and (min-width:1300px) {
     .decisionMaking{
         width: 30%;
         height: 17vh;
@@ -160,7 +160,7 @@
 }
 @media screen and (min-width:1025px){
     .decisionMaking{
-        height:25%;
+        height:30%;
     }
 }
 
