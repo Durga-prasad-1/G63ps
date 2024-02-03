@@ -1,10 +1,11 @@
 import React,{useState} from "react";
 import imag from "../images/thinkpng.png";
-import { useNaviagte } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./contact.css";
 
 
 function Contact(){
+    const naviagte = useNavigate();
     const [contactdata, setContact] = useState({
         username:"",
         email:"",
