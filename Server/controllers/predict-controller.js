@@ -1,10 +1,12 @@
 const { model } = require("mongoose");
 const pred_model = require("../models/prediction-model");
 const { PythonShell } = require("python-shell");
+const User = require("../models/user-model");
 
 const predictForm = async (req, res) => {
     try {
         const dataToPredict = req.body;
+        const name = dataToPredict.Name;
         delete dataToPredict.Name;
 
         const modelPrediction = async (data) => {
@@ -30,6 +32,10 @@ const predictForm = async (req, res) => {
         };
 
         const prediction = await modelPrediction(dataToPredict);
+        const dbData = dataToPredict;
+        dbData["Name"]=name;
+        dbData["result"]=prediction[0];
+        await pred_model.create(dbData);
         res.json({prediction });
 
     } catch (error) {

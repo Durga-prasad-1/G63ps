@@ -15,11 +15,9 @@ const predictSchema = new Schema({
     I131Treatment: {type: String, required: true},
     queryHypothyroid:{type: String, required: true},
     queryHyperthyroid: {type: String, required: true},
-    lithium: {type: String, required: true},
-    goitre: {type: String, required: true},
     tumor: {type: String, required: true},
-    Hypopituitary: {type: String, required: true},
     psych: {type: String, required: true},
+    result: {type: String, required: true}
 });
 
 const pred_model =model("Prediction", predictSchema);
