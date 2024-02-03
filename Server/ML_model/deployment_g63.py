@@ -18,9 +18,11 @@ if __name__ == "__main__":
     data = json.loads(sys.argv[1])
     input_data = [list(data.values())]
     # Converting strings into integers and NaN
-    input_data[0][1]=int(input_data[0][1])
+    #input_data[0][1]=int(input_data[0][1])
     for i in range(len(input_data[0])):
-        if input_data[0][i] == "0" or input_data[0][i] == "1":
+        if input_data[0][i] == "":
+            input_data[0][i]=None
+        elif input_data[0][i] == "0" or input_data[0][i] == "1":
             input_data[0][i]=int(input_data[0][i])
         else:
             input_data[0][i]=float(input_data[0][i]) 

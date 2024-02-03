@@ -7,11 +7,12 @@ import {toast,ToastContainer} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { GoogleAuthProvider,signInWithPopup } from "firebase/auth";
 import { auth } from "../firebase/fireBase";
+import google1 from "../images/search.png";
 
 function Login(props){
 
     const navigate = useNavigate();
-
+    
     const [user, setLogin] = useState({
         username: "",
         password: "",
@@ -49,7 +50,7 @@ function Login(props){
         props.func(true);
         console.log(user.accessToken);
         localStorage.setItem('token',user.accessToken);
-        // setTimeout(navigate('/'),4000);
+        navigate('/?message=Login%20Successful');
 
         // ...
         }).catch((error) => {
@@ -97,16 +98,40 @@ function Login(props){
         }
     };
 
-
+    // this is for show forgot password display
     function showPermission(){
         let show = document.querySelector("#permission1");
         show.classList.remove("active1");
     }
 
     function notShowPermission(){
+        let inputValue = document.querySelector("#bfg");
+        inputValue.value = "";
         let show = document.querySelector("#permission1");
         show.classList.add("active1");
     }
+
+    function emailSent(event){
+        let show = document.querySelector("#permission1");
+        show.classList.add("active1");
+        // the event is for button but i need to check for input so previousElement is used
+        let mail = event.target.previousElementSibling.value;
+        console.log(mail);
+        if (mail === ""){
+            toast.warn("You didn't enter the email",{
+                position:"top-center"
+            });
+        }
+        else{
+            toast.success("Link is sent to your mail",{
+                position:"top-center"
+            });
+        }
+        
+        let inputValue = document.querySelector("#bfg");
+        inputValue.value = "";  // this is for default text value is empty
+    }
+
     
     return(
         <div className="flexes">
@@ -145,7 +170,7 @@ function Login(props){
             </form>
         </div>
         <div className="div_box" id="bottom">
-        <button onClick={handleGoogleLogin}>sign in</button>
+        <button className="google_button" onClick={handleGoogleLogin}><img className="login_google_img" src={google1}/> Google</button>
         </div>
     </div>
 
@@ -158,10 +183,10 @@ function Login(props){
                     <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
                 </svg>
                 </button>
-                </div>                
+                </div>
                 <div className="mail_btn">
-                    <input placeholder="Eg: Rishi@gmail.com" className="login_mail" style={{ fontSize: '20px' }}/>
-                    <button className="butn1">Submit</button>
+                    <input name="forgotMail" type="email" placeholder="Eg:abc123@gmail.com" id="bfg" className="login_mail"  />
+                    <button className="butn1" onClick={emailSent}>Submit</button>
                 </div>
             </div>
             </div>
