@@ -54,7 +54,7 @@ function Login(props){
         props.func(true);
         console.log(user.accessToken);
         localStorage.setItem('token',user.accessToken);
-        // setTimeout(navigate('/'),4000);
+        navigate('/?message=Login%20Successful');
 
         // ...
         }).catch((error) => {
