@@ -8,6 +8,13 @@ import "react-toastify/dist/ReactToastify.css";
 import { GoogleAuthProvider,signInWithPopup } from "firebase/auth";
 import { auth } from "../firebase/fireBase";
 import google1 from "../images/search.png";
+import IconButton from '@mui/material/IconButton';
+import OutlinedInput from '@mui/material/OutlinedInput';
+import InputLabel from '@mui/material/InputLabel';
+import InputAdornment from '@mui/material/InputAdornment';
+import FormControl from '@mui/material/FormControl';
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
 function Login(props){
 
@@ -30,9 +37,6 @@ function Login(props){
             });
         };
 
-    const handleTogglePassword = () => {
-        setShowPassword(!showPassword);
-      };
     
     /*login */
     const handleGoogleLogin = (e) =>{
@@ -132,6 +136,19 @@ function Login(props){
         inputValue.value = "";  // this is for default text value is empty
     }
 
+    const handleClickShowPassword1 = () => setShowPassword((show) => !show);
+
+    const handleMouseDownPassword1 = (event) => {
+        event.preventDefault();
+    };
+
+    const handleClickShowPassword2 = () => setShowPassword((show) => !show);
+
+    const handleMouseDownPassword2 = (event) => {
+        event.preventDefault();
+    };
+
+
     
     return(
         <div className="flexes">
@@ -144,15 +161,64 @@ function Login(props){
         <div  className="form div_box">
             <form onSubmit={handleLogin}>
                 <div className="div_box" id="username">
-                    <label htmlFor="name">Enter Username:</label>
-                    <input id="user" className="putted" onChange={handleInput} type="text" placeholder="Username" name="username"/>
+                    {/* <label htmlFor="name">Enter Username:</label> */}
+                    {/* <input id="user" className="putted" onChange={handleInput} type="text" placeholder="Username" name="username"/> */}
+
+                    <FormControl sx={{ width: '120%', height:'40%'}}>
+          <InputLabel htmlFor="outlined-adornment-password">Username</InputLabel>
+          <OutlinedInput
+            id="outlined-adornment-password"
+            type='text'
+            name="username"
+            onChange={handleInput}
+            endAdornment={
+              <InputAdornment position="end">
+                <IconButton
+                  aria-label="toggle password visibility"
+                  onClick={handleClickShowPassword2}
+                  onMouseDown={handleMouseDownPassword2}
+                  edge="end"
+                >
+                  {/* {showPassword ? <VisibilityOff /> : <Visibility />} */}
+                </IconButton>
+              </InputAdornment>
+            }
+            label="Username"
+          />
+        </FormControl>
+
                 </div>
                 <div className="div_box" id="password">
-                    <label htmlFor="pass">Enter Password:</label>
-                    <input id="pass" className="putted" type={showPassword ? "text" : "password"} onChange={handleInput} placeholder="Password" name="password"/>
+                    {/* <label htmlFor="pass">Enter Password:</label> */}
+                    {/* <input id="pass" className="putted" type={showPassword ? "text" : "password"} onChange={handleInput} placeholder="Password" name="password"/> */}
+
+                    <FormControl sx={{width: '110%', height:'40%'}}>
+          <InputLabel htmlFor="outlined-adornment-password" >Password</InputLabel>
+          <OutlinedInput
+            id="outlined-adornment-password"
+            type={showPassword ? 'text' : 'password'}
+            name="password"
+            onChange={handleInput}
+            endAdornment={
+              <InputAdornment position="end" >
+                <IconButton
+                  aria-label="toggle password visibility"
+                  onClick={handleClickShowPassword1}
+                  onMouseDown={handleMouseDownPassword1}
+                  edge="end"
+                >
+                  {showPassword ? <VisibilityOff /> : <Visibility />}
+                </IconButton>
+              </InputAdornment>
+            }
+            label="Password"
+          />
+        </FormControl>        
+
+
                 </div>
 
-                <div className="div_box" id="Showpass1">
+                {/* <div className="div_box" id="Showpass1">
                     <label htmlFor="showPass">
                     <input
                     type="checkbox"
@@ -162,7 +228,14 @@ function Login(props){
                     />
                     Show Password
                     </label>
+                </div> */}
+
+                <div className="div_box" id="Remember">
+                    <label htmlFor="rem">
+                        <input type="radio" className="putted" id="rem"/>Remember me
+                    </label>
                 </div>
+
                 <a className="forgot" onClick={showPermission}>Forgot Me?</a>
                 <button type="submit" id="login">Login</button>
                 <div className="div_box" id="extra">------------------or sign in with-------------------</div>
