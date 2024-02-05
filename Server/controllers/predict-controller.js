@@ -11,6 +11,7 @@ const predictForm = async (req, res) => {
 
         const modelPrediction = async (data) => {
             const options = {
+                pythonPath: "/opt/render/.local/lib/python3.7",
                 mode: "text",
                 scriptPath: "./ML_model",
                 args: JSON.stringify(data),
