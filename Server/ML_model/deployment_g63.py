@@ -5,7 +5,7 @@ import pandas as pd
 import os
 
 path = os.getcwd()
-with open(path+"\\ML_model\\model.pkl", 'rb') as model_file:
+with open("./ML_model/model.pkl", 'rb') as model_file:
     model = pickle.load(model_file)
 
 def predict(data):
