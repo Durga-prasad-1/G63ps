@@ -57,7 +57,7 @@ function Form(props){
                 navigate("/outputPage");
             }
         } catch (error) {
-            console.log(error);
+            alert(error);
         }
         console.log(formData);
     }
