@@ -26,6 +26,7 @@ const predictForm = async (req, res) => {
                     }
                 }).catch((err) => {
                     console.log("Error in executing the Python script: ", err);
+                    res.json({ error: `Error in executing the Python script ${err}` });
                     reject(err);
                 });
             });
