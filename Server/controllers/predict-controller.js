@@ -26,11 +26,6 @@ const predictForm = async (req, res) => {
                     }
                 }).catch((err) => {
                     console.log("Error in executing the Python script: ", err);
-<<<<<<< HEAD
-                    return err;
-=======
-                    res.json({ error: `Error in executing the Python script ${err}` });
->>>>>>> dbf6ac10da714463ce8b1e19a872fefcb5eabfdd
                     reject(err);
                 });
             });
