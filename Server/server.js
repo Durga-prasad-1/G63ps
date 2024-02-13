@@ -6,7 +6,6 @@ const router = require("./router/auth-router");
 const connectDb = require("./utils/db");
 const errorMiddleware = require("./middlewares/error-middleware");
 const contactRoute = require("./router/contact-router");
-const predRoute = require("../Server/router/prediction-router");
 const pwdRoute= require("../Server/router/password-router");
 
 const corsOptions = {
@@ -20,7 +19,6 @@ app.use(express.json());
 
 app.use("/auth",router);
 app.use("/",contactRoute);
-app.use("/model",predRoute);
 app.use("/passwords",pwdRoute);
 app.use(errorMiddleware);
 
