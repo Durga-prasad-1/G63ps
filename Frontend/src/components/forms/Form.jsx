@@ -42,7 +42,7 @@ function Form(props){
             ...formData,
         });
         try {
-            const response = await fetch("http://localhost:5000/model/prediction",{
+            const response = await fetch("https://thyro-aid-prediction.onrender.com/prediction",{
                 method: "POST",
                 headers:{
                     "Content-Type": "application/json",
@@ -50,14 +50,14 @@ function Form(props){
                 body: JSON.stringify(formData),
             });
             const result = await response.json();
-            console.log(result.prediction);
+            console.log(result.error);
             if(response.ok){
                 alert(result.prediction);
                 localStorage.setItem("result",result.prediction);
                 navigate("/outputPage");
             }
         } catch (error) {
-            console.log(error);
+            alert(error);
         }
         console.log(formData);
     }
