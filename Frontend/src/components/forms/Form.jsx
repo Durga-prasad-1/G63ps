@@ -43,7 +43,6 @@ function Form(props){
         });
         try {
             const response = await fetch("https://thyro-aid-prediction.onrender.com/prediction",{
-            const response = await fetch("https://thyro-aid-prediction.onrender.com/prediction",{
                 method: "POST",
                 headers:{
                     "Content-Type": "application/json",
@@ -54,9 +53,6 @@ function Form(props){
             result.TSH = formData.TSH;
             result.TT4 = formData.TT4;
             result.T3 = formData.T3;
-            result.TSH=formData.TSH;
-            result.TT4=formData.TT4;
-            result.T3=formData.T3;
             if(response.ok){
                 alert(result.prediction);
                 navigate("/outputPage");
