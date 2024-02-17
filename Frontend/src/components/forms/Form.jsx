@@ -54,9 +54,15 @@ function Form(props){
             result.TT4=formData.TT4;
             result.T3=formData.T3;
             if(response.ok){
-                alert(result.prediction);
+                // alert(result.prediction);
+                const temp1={
+                    Result:result.prediction,
+                    TSH:result.TSH,
+                    TT4:result.TT4,
+                    T3:result.T3
+                }
                 localStorage.setItem("result",result.prediction);
-                navigate("/outputPage");
+                navigate("/outputPage",{state :{ Object:temp1}});
             }
         } catch (error) {
             alert(error);
