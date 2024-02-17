@@ -50,10 +50,11 @@ function Form(props){
                 body: JSON.stringify(formData),
             });
             const result = await response.json();
-            console.log(result.error);
+            result.TSH = formData.TSH;
+            result.TT4 = formData.TT4;
+            result.T3 = formData.T3;
             if(response.ok){
                 alert(result.prediction);
-                localStorage.setItem("result",result.prediction);
                 navigate("/outputPage");
             }
         } catch (error) {
