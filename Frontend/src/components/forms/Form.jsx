@@ -61,7 +61,6 @@ function Form(props){
                     TT4:result.TT4,
                     T3:result.T3
                 }
-                localStorage.setItem("result",result.prediction);
                 navigate("/outputPage",{state :{ Object:temp1}});
             }
         } catch (error) {
