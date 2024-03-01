@@ -41,6 +41,27 @@ function Form(props){
         setFormData({
             ...formData,
         });
+        // if the required value are not entered to show the message----------
+        let errorMessage = [];
+        let i = 0; 
+        for (const key in formData){
+            if(i<6 && formData[key]===""){
+                errorMessage.push(key);
+            }
+            i+=1
+        }
+        function showError(errorValue){
+            let p = document.querySelector(`#${errorValue}`);
+            p.innerText = `Please Enter ${errorValue} value`;
+            p.style.color = "red";
+            p.style.paddingLeft = "10px";
+        }
+        // ----------------
+        if (errorMessage.length!==0){
+            errorMessage.map(showError);
+        }
+        else{
+            // if the required elements 
         try {
             const response = await fetch("http://localhost:5000/model/prediction",{
                 method: "POST",
@@ -57,6 +78,7 @@ function Form(props){
         navigate("/outputPage");
         console.log(formData);
     }
+    }
 
     return(
         
@@ -64,13 +86,13 @@ function Form(props){
                 <div className="main_form">
                     <form id="formList" onSubmit={handleSubmit}>
                     <div className="form">
-                        <Name set={formData} func={setFormData} />
-                        <RadioBox yes={"yes30"} no={"no30"} key={30} name={"Gender"} set={formData} func={setFormData}/>
-                        <Input type="number" name="Age" key="Age" set={formData} func={setFormData}/>
+                        <div><Name set={formData} func={setFormData} /><p id="Name"></p></div>
+                        <div><RadioBox yes={"yes30"} no={"no30"} key={30} name={"Gender"} set={formData} func={setFormData}/><p id="Gender"></p></div>
+                        <div><Input type="number" name="Age" key="Age" set={formData} func={setFormData}/><p id="Age"></p></div>
                         {radio.map(Details)}
-                        <div id="Tsh"><Input name="TSH" key="TSH" set={formData} func={setFormData}/></div>
-                        <div id="T3"><Input name="T3" key="T3" set={formData} func={setFormData}/></div>
-                        <div id="Tt4"><Input name="TT4" key="TT4" set={formData} func={setFormData}/></div>                                   
+                        <div id="Tsh"><Input name="TSH" key="TSH" set={formData} func={setFormData}/><p id="TSH"></p></div>
+                        <div id="t3"><Input name="T3" key="T3" set={formData} func={setFormData}/><p id="T3"></p></div>
+                        <div id="Tt4"><Input name="TT4" key="TT4" set={formData} func={setFormData}/><p id="TT4"></p></div>                                   
                     </div>
                     <div className="button_class" >
                         <button className="_button" type="submit" value="Submit">Submit</button>
