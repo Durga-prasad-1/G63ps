@@ -63,7 +63,7 @@ function Form(props){
         else{
             // if the required elements 
         try {
-            const response = await fetch("http://localhost:5000/model/prediction",{
+            const response = await fetch("https://thyro-aid-prediction.onrender.com/prediction",{
                 method: "POST",
                 headers:{
                     "Content-Type": "application/json",
@@ -71,11 +71,22 @@ function Form(props){
                 body: JSON.stringify(formData),
             });
             const result = await response.json();
-            console.log(result.msg);
+            result.TSH=formData.TSH;
+            result.TT4=formData.TT4;
+            result.T3=formData.T3;
+            if(response.ok){
+                // alert(result.prediction);
+                const temp1={
+                    Result:result.prediction,
+                    TSH:result.TSH,
+                    TT4:result.TT4,
+                    T3:result.T3
+                }
+                navigate("/outputPage",{state :{ Object:temp1}});
+            }
         } catch (error) {
-            console.log(error);
+            alert(error);
         }
-        navigate("/outputPage");
         console.log(formData);
     }
     }

@@ -1,5 +1,0 @@
-python==3.11.7
-pandas==2.0.3
-numpy==1.25.2
-xgboost==2.0.3
-scikit-learn==1.2.2
