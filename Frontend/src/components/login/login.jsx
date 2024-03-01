@@ -40,6 +40,9 @@ function Login(props){
         password: "",
         });
 
+    //forgot password
+    const [forgotMail,setMail] = useState("");
+
     const [showPassword, setShowPassword] = useState(false);
     
     const handleInput = (event) => {
@@ -134,9 +137,9 @@ function Login(props){
         let show = document.querySelector("#permission1");
         show.classList.add("active1");
         // the event is for button but i need to check for input so previousElement is used
-        let mail = event.target.previousElementSibling.value;
-        console.log(mail);
-        if (mail === ""){
+        
+        console.log(forgotMail); // this forgotMail is from the useState
+        if (forgotMail === ""){
             toast.warn("You didn't enter the email",{
                 position:"top-center"
             });
@@ -162,6 +165,11 @@ function Login(props){
     const handleMouseDownPassword2 = (event) => {
         event.preventDefault();
     };
+
+    // this is for handle forgot mail
+    function handleSetMail(event){
+        setMail(event.target.value);
+    }
 
 
     
@@ -263,6 +271,7 @@ function Login(props){
     </div>
 
     <div className="permission1 active1" id="permission1">
+        <form onSubmit={emailSent}>
             <div className="enter_mail">
                 <div className="email_box">
                 <h6>Enter your email ID ?</h6>
@@ -273,10 +282,11 @@ function Login(props){
                 </button>
                 </div>
                 <div className="mail_btn">
-                    <input name="forgotMail" type="email" placeholder="Eg:abc123@gmail.com" id="bfg" className="login_mail"  />
-                    <button className="butn1" onClick={emailSent}>Submit</button>
+                    <input name="forgotMail" type="email" placeholder="Eg:abc123@gmail.com" id="bfg" className="login_mail" onChange={handleSetMail}  />
+                    <button className="butn1" type="submit">Submit</button>
                 </div>
             </div>
+            </form>
             </div>
 
             
