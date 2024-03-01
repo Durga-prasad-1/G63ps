@@ -48,7 +48,7 @@ function Report(){
       </table>
 
       <div className="report_result">
-        <strong style={{ fontSize: '25px' }}>Result :</strong> <h1>{Result}</h1>
+        <strong style={{ fontSize: '25px' }}>Result :</strong> <h1>{Result.charAt(0).toUpperCase() + Result.slice(1).toLowerCase()}</h1> {/*to captialize the string*/}
       </div>
 
       <div className="report_buttons">

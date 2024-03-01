@@ -1,7 +1,7 @@
 import React from "react";
 import "./login.css";
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useState,useEffect } from "react";
+import { Link,useLocation, useNavigate } from "react-router-dom";
 import loginImg from "../images/login.png";
 import {toast,ToastContainer} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -19,6 +19,21 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 function Login(props){
 
     const navigate = useNavigate();
+    const location = useLocation();
+    useEffect(() => {
+        // Parse the query parameter from the URL
+        const searchParams = new URLSearchParams(location.search);
+        const message = searchParams.get('message');
+        console.log(searchParams);
+        console.log(message);
+        if (message) {
+          // Show toast with the message
+            toast.success(message,{
+                position:"top-center"
+            });
+            navigate('.', { replace: true }); // this is to remove query params from url
+        }
+        }, []);
     
     const [user, setLogin] = useState({
         username: "",

@@ -3,6 +3,8 @@ import "./register.css";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import registerImg from "../images/discuss2.png"
+import {toast,ToastContainer} from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Register(){
     const navigate = useNavigate();
@@ -37,18 +39,19 @@ function Register(){
             const data = await response.json();
             if (response.ok) {
                 //const responseData = await response.json();
-                alert(data.msg);
+                // alert(data.msg);
                 setUser({ username: "", email: "", password: "", confirmPassword: ""});
-                navigate("/login");
+                navigate('/login?message=Registration%20Successful');
             } else {
-                alert(data.msg);
+                toast.error(data.msg,{
+                    position:"top-center"
+                })
                 //console.log(response.json());
             }
         } catch (error) {
             console.error("Error", error);
         }
     };
-    
 
     return(
         <div className="flex">
@@ -74,6 +77,8 @@ function Register(){
         </div>
         </div>
         </form>
+        <ToastContainer autoClose={3000} limit={1}/>
+
         </div>
     );
 };
