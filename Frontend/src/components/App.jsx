@@ -10,6 +10,7 @@ import Navbar2 from  "./navbar/navlink2";
 import ThyroidTestForm from "./test/test";
 import ResetPassword from "./resetPassword/resetpassword";
 import Report from "./outputPage/output";
+import History from "./History/history";
 import {
     BrowserRouter as Router,
     Route,
@@ -44,6 +45,7 @@ function App(){
             <Route path="/resetPassword" element={<ResetPassword />} />
             <Route path ="/test" element = {<ThyroidTestForm />} />  
             <Route path ="/outputPage" element = {<Report />} /> 
+            <Route path ="/history" element = {<History />} /> 
             <Route path="/" element={<Home />} />
             
             </Routes>
