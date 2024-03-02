@@ -20,18 +20,11 @@ function Home(props){
     console.log(message);
     if (message) {
       // Show toast with the message
-        if (message==="Logout"){
-            //for logout toast
-            toast.info("You have logged out",{
-                position:"top-center"
-            });
-        }
-        else{
             //for successful login
         toast.success(message,{
             position:"top-center"
         });
-    }
+    
         navigate('.', { replace: true }); // this is to remove query params from url
     }
     }, [message]);

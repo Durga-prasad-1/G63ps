@@ -14,7 +14,7 @@ function Report(){
   return (
     <div className='report_outerarea'>
     <div className="report_container">
-      <h2 style={{ fontSize: '35px' }}>REPORT:</h2>
+      <h2 >REPORT:</h2>
 
       <table className='report_table'>
         <thead>
@@ -48,11 +48,11 @@ function Report(){
       </table>
 
       <div className="report_result">
-        <strong style={{ fontSize: '25px' }}>Result :</strong> <h1>{Result.charAt(0).toUpperCase() + Result.slice(1).toLowerCase()}</h1> {/*to captialize the string*/}
+        <strong >Result :</strong> <p>{Result.charAt(0).toUpperCase() + Result.slice(1).toLowerCase()}</p> {/*to captialize the string*/}
       </div>
 
       <div className="report_buttons">
-        <button className='report_button'>Know More</button>
+        {/* <button className='report_button'>Know More</button> */}
         <button className='report_button'>Diet Plan</button>
       </div>
     </div>

@@ -16,10 +16,13 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height:80vh;
-    width: 100vh;
+    height:80%;
+    width: 90%;
     border: none;
-    border-radius: 40px;
+    border-radius: 20px;
+  }
+  .report_container h2{
+    font-size: 35px;
   }
   
   .report_table {
@@ -45,19 +48,26 @@
     margin-top: 30px;
     margin-bottom: 50px;
     padding: 15px;
+    width: 40%;
     background-color: #fff;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
+    font-size: 25px;
     overflow: hidden;
   }
-  
+  .report_result strong{
+    font-size: 25px;
+  }
   .report_buttons {
+    width: 50%;
+    justify-content: center;
     display: flex;
     gap: 80px;
   }
   
   .report_button {
     padding: 10px;
+    width: 30%;
     font-size: 25px;
     background-color: #5046d9;
     color: #fff;
@@ -71,3 +81,21 @@
     background-color: #440dba;
   }
   
+@media screen and (max-width : 481px) {
+  .report_result{
+    width: 90%;
+    font-size: 1.5rem;
+  }
+  .report_buttons{
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 90%;
+  }
+  .report_button{
+    width: 80%;
+  }
+  td,th{
+    font-size: 1.2rem;
+  }
+}
