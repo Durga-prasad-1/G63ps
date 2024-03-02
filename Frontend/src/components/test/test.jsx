@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import TestQuestions from '../../RadiosData/testQuestions';
 import "./test.css";
 import RadioBox from '../forms/RadioBox';
+import { toast } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
 function ThyroidTestForm() {
     const [answers, setAnswers] = useState({
@@ -24,36 +26,43 @@ function ThyroidTestForm() {
 
 
     });
-    const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-
-    const symptoms = [
-        "Have you noticed any swelling or enlargement in your neck?",
-        "Do you have unexplained weight loss/gain despite normal eating habits?",
-        "Do you experience excessive sweating or heat intolerance?",
-        "Have you experienced thinning or brittle hair recently?",
-        "Do you have a rapid or irregular heartbeat?",
-        "Do you often feel tired or fatigued?",
-        "Have you noticed changes in your bowel habits, such as constipation or diarrhea?",
-        "Do you have muscle weakness or joint pain?",
-        "Do you experience frequent mood swings or irritability?",
-        "Do you have difficulty concentrating or remembering things?",
-        "Do you have dry skin or hair?",
-        "Do you often feel cold, especially in your hands and feet?",
-        "Have you experienced changes in your appetite?",
-        "Have you had trouble sleeping or insomnia?",
-        "Do you have a hoarse or raspy voice?",
-        "Have you experienced swelling in your legs, ankles, or face?"
-    ];
-
-    const handleAnswerChange = (index, answer) => {
-        setAnswers({ ...answers, [index]: answer });
-    };
 
     const handleSubmit = () => {
+        const thyroidSymptomsCount = {"high": 0, "medium": 0, "low": 0};
+        let noCorrectInput = 0;
         // Handle submission logic here
         console.log(answers);
-        console.log(Object.values(answers));
-        setCurrentQuestionIndex(currentQuestionIndex + 1);
+        console.log([Object.values(answers)][0]);
+        const symptoms = [Object.values(answers)][0];
+        symptoms.forEach((val, i) => {
+            if (val === '1') {
+                if (i + 1 <= 3) {
+                    thyroidSymptomsCount["high"] += 1;
+                } else if (i + 1 <= 8) {
+                    thyroidSymptomsCount["medium"] += 1;
+                } else {
+                    thyroidSymptomsCount["low"] += 1;
+                }
+            }
+            else if (val === ""){
+                noCorrectInput = 1;
+            }
+        });
+        // ==========
+        let resultP=document.querySelector("#result");
+        if(noCorrectInput){
+            toast.info("Enter the values",{position:"top-center"});
+        }
+        else{
+        if (thyroidSymptomsCount["high"] >= 1 || thyroidSymptomsCount["medium"] >= 2 || thyroidSymptomsCount["low"] >= 3) {
+            console.log("Based on your responses, it is advisable to consult a healthcare professional for a thyroid test.");
+            resultP.innerText = "Based on your responses, it is advisable to consult a healthcare professional for a thyroid test.";
+        } else {
+            console.log("Based on your responses, you may not need to take a thyroid test at this time. However, consult a healthcare professional if you have concerns.");
+            resultP.innerText = "Based on your responses, you may not need to take a thyroid test at this time. However, consult a healthcare professional if you have concerns.";
+        }        
+        resultP.scrollIntoView({ behavior: 'smooth' });
+    }
     };
     function Details(object){
         return(<RadioBox yes={object.yes} no={object.no} key={object.key} name={object.question} set={answers} func={setAnswers} />)
@@ -105,6 +114,7 @@ function ThyroidTestForm() {
         <div className="submit-container">
             <button className="submit-button" onClick={handleSubmit}>Submit</button>
         </div>
+        <p id='result'></p>
         </div>
     );
 }
