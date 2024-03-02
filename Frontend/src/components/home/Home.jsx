@@ -36,9 +36,24 @@ function Home(props){
     }
     }, [message]);
 
-    function setNav(){
-    //props.func(true); // this is for navbar status 
+    function checkLogin(event){
+        let kk = "";
+        kk = localStorage.getItem('token');
+        if(kk==null){
+            navigate('/login?message=Please%20Log%20In');
+        }
+        else{
+            console.log(event.target.innerText);
+            console.log(kk)
+        if(event.target.innerText==="Form"){
+            navigate('/form');
+        }
+        else if(event.target.innerText==="Take Test"){
+            navigate('/test');
+        }
+        }
     }
+
     return(
         <div>
     <div className="container body">
@@ -56,7 +71,7 @@ function Home(props){
             <span className="image__bg span"><img className="img" src={homePhoto} alt="fhv"/></span>
             </div>
             <div className="responsive_button">
-            <Link to="/form" ><button className="form_button" onClick={setNav}>Form</button></Link>
+            <button className="form_button" onClick={checkLogin}>Form</button>
             </div>
         </header>
         
@@ -68,7 +83,7 @@ function Home(props){
                     <span className="tst">CONFUSED ABOUT TAKING THYROID TEST?</span>
                     Feeling hesitant? Many people have similar feelings when faced with medical tests. Your health is precious, and taking this step showcases your commitment to self-care. Remember to seek support from healthcare professionals who can guide you through this process with care and expertise.Here's a test that can provide valuable insight into your thyroid health.
             </p> 
-            <Link to="/test"><button className="form_button" onClick={setNav}>Take Test</button></Link>
+            <button className="form_button" onClick={checkLogin}>Take Test</button>
             </div>
         </div>
         <div className="aboutContainer" id="about">
@@ -80,7 +95,6 @@ function Home(props){
                 </p>
             </div>
         </div>
-         {/*this is for toast msg*/}
         </div>
         </div>
         );

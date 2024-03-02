@@ -22,7 +22,6 @@ function App(){
     const [setNav,handleNav] = useState(false);
     // handleNav(setNav);
     let kk = "";
-    console.log()
     kk = localStorage.getItem('token');
     // console.log(kk);
     // console.log(jwtDecode(kk));

@@ -69,7 +69,7 @@ color: var(--text-dark);
 font-weight: 400;
 }
 
-.content p {
+.content p,.test p {
 margin-bottom: 2rem;
 color: var(--text-light);
 line-height: 1.75rem;
@@ -229,7 +229,7 @@ text-decoration: none;
 }
 
 .test p {
-    margin-top: 200px;
+    margin-top: 135px;
 }
 
 .test img {

@@ -32,7 +32,7 @@ function Navbar2(props){
         localStorage.removeItem('token');
         props.func(false) // changes the navbar
         toast.info("You have logged out",{position:"top-center"});
-        // navigate("/");
+        navigate("/");
     }
     //for avatar in img
     let google = jwtDecode(localStorage.getItem('token')); // to get data in from token and decode it.

@@ -27,13 +27,18 @@ function Login(props){
         
         console.log(searchParams);
         console.log(message);
-        if (message) {
+        if (message=="Registration Successful") {
           // Show toast with the message
             toast.success(message,{
                 position:"top-center"
             });
-            navigate('.', { replace: true }); // this is to remove query params from url
         }
+        else{
+            toast.info(message,{
+                position:"top-center"
+            });
+        }
+        navigate('.', { replace: true }); // this is to remove query params from url
         }, []);
     
     const [user, setLogin] = useState({
