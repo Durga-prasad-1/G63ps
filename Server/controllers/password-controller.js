@@ -15,7 +15,7 @@ const resetPwd = async (req, res)=>{
         if(Password==ConfirmPassword){
             res.status(400).json({msg:"Passwords cannot be same"});
         }
-        userData.password=newPassword;
+        userData.password=NewPassword;
         await userData.save();
         res.status(200).json({msg:"Password changed successfully."});
     } catch (error) {
