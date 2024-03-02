@@ -73,9 +73,9 @@ function Form(props){
                 body: JSON.stringify(formData),
             });
             const result = await response.json();
-            result.TSH=formData.TSH;
-            result.TT4=formData.TT4;
-            result.T3=formData.T3;
+            result.TSH = formData.TSH;
+            result.TT4 = formData.TT4;
+            result.T3 = formData.T3;
             if(response.ok){
                 // alert(result.prediction);
                 const temp1={
@@ -87,6 +87,7 @@ function Form(props){
                 navigate("/outputPage",{state :{ Object:temp1}});
             }
         } catch (error) {
+            alert(error);
             alert(error);
         }
         console.log(formData);

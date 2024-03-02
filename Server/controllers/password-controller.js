@@ -5,17 +5,20 @@ const resetPwd = async (req, res)=>{
     try {
         const {Password, NewPassword, ConfirmPassword} = req.body;
         const userData = req.user;
-        const isPwdValid = await userData.PasswordCheck(currPwd);
-        if(NewPassword==ConfirmPassword){
-            res.status(400).json({msg:"Both Passwords cannot be same"});
-        }
+        const isPwdValid = await userData.PasswordCheck(Password);
         if(!isPwdValid){
-            res.status(400).json({msg:"Invalid Password."});
+            res.status(400).json({msg:"Invalid Password"});
+            return;
         }
-        if(newPwd!=confirmPwd){
-            res.status(400).json({msg:"Passwords don't match."});
+        if(NewPassword!=ConfirmPassword){
+            res.status(400).json({msg:"Passwords don't match"});
+            return;
         }
-        userData.password=newPwd;
+        if(Password==ConfirmPassword){
+            res.status(400).json({msg:"Passwords cannot be same"});
+            return;
+        }
+        userData.password=NewPassword;
         await userData.save();
         res.status(200).json({msg:"Password changed successfully."});
     } catch (error) {

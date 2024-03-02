@@ -9,7 +9,7 @@ const contactRoute = require("./router/contact-router");
 const pwdRoute= require("../Server/router/password-router");
 
 const corsOptions = {
-    origin: "http://localhost:3000",
+    origin: "https://thyro-aid.vercel.app",
     methods: "GET, POST, PUT, PATCH, DELETE, HEAD",
     credentials: true,
 }
