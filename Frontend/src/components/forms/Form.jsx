@@ -64,6 +64,7 @@ function Form(props){
             // if the required elements 
         const Id=jwtDecode(localStorage.getItem('token')).userId;
         formData["userId"]=Id;
+        console.log(formData);
         try {
             const response = await fetch("https://thyro-aid-prediction.onrender.com/prediction",{
                 method: "POST",
