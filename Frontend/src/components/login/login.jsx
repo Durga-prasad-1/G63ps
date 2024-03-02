@@ -3,7 +3,7 @@ import "./login.css";
 import { useState,useEffect } from "react";
 import { Link,useLocation, useNavigate } from "react-router-dom";
 import loginImg from "../images/login.png";
-import {toast,ToastContainer} from "react-toastify";
+import {toast} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { GoogleAuthProvider,signInWithPopup } from "firebase/auth";
 import { auth } from "../firebase/fireBase";
@@ -17,13 +17,14 @@ import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
 function Login(props){
-
     const navigate = useNavigate();
-    const location = useLocation();
-    useEffect(() => {
-        // Parse the query parameter from the URL
+        const location = useLocation();
         const searchParams = new URLSearchParams(location.search);
         const message = searchParams.get('message');
+    useEffect(() => {
+        
+        // Parse the query parameter from the URL
+        
         console.log(searchParams);
         console.log(message);
         if (message) {
@@ -262,11 +263,10 @@ function Login(props){
                 <a className="forgot" onClick={showPermission}>Forgot Me?</a>
                 <button type="submit" id="login">Login</button>
                 <div className="div_box" id="extra">------------------or sign in with-------------------</div>
-                <ToastContainer/>
             </form>
         </div>
         <div className="div_box" id="bottom">
-        <button className="google_button" onClick={handleGoogleLogin}><img className="login_google_img" src={google1}/> Google</button>
+        <button className="google_button" onClick={handleGoogleLogin}><img className="login_google_img" alt="googlePic" src={google1}/> Google</button>
         </div>
     </div>
 

@@ -15,6 +15,7 @@ import {
     Route,
     Routes
     } from "react-router-dom";
+    import { ToastContainer } from "react-toastify";
 
 
 function App(){
@@ -47,6 +48,7 @@ function App(){
             <Route path="/" element={<Home />} />
             
             </Routes>
+            <div><ToastContainer autoClose={3000} limit={1}/></div>
         </Router>
         
         

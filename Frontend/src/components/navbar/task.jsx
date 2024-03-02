@@ -7,6 +7,9 @@ import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
 import Logout from '@mui/icons-material/Logout';
 import { useNavigate  } from "react-router-dom";
+import {toast,ToastContainer} from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { popoverClasses } from '@mui/material';
 
 
 
@@ -47,7 +50,8 @@ export default function AccountMenu(props) {
     function nav(){
         notShowPermission();
         props.func(false) // changes the navbar
-        navigate("/");
+        // navigate('/');
+        toast.info("You have logged out",{position:'top-center'});
     }
   return (
     <React.Fragment>

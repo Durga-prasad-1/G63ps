@@ -3,7 +3,7 @@ import "./register.css";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import registerImg from "../images/discuss2.png"
-import {toast,ToastContainer} from "react-toastify";
+import {toast} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function Register(){
@@ -77,7 +77,7 @@ function Register(){
         </div>
         </div>
         </form>
-        <ToastContainer autoClose={3000} limit={1}/>
+        {/* <ToastContainer autoClose={3000} limit={1}/> */}
 
         </div>
     );
