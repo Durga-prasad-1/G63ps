@@ -1,4 +1,4 @@
-const User = require("../models/user-model");
+const {User,pred} = require("../models/user-model");
 
 //Home page Logic
 const home = async (req,res)=>{
@@ -82,4 +82,17 @@ const user = async (req, res)=>{
     }
 }
 
-module.exports = { home, register, login, user };
+//Prediction History Logic
+const Pred = require("../models/pred-model");
+const history = async (req,res)=>{
+    try {
+        const Id = req.body.Id;
+        //const collection = db.collection("predictions");
+        const query = await Pred.find({userId:Id});
+        res.json(query);
+    } catch (error) {
+        console.log("Error in prediction history",error);   
+    }
+}
+
+module.exports = { home, register, login, user, history };
