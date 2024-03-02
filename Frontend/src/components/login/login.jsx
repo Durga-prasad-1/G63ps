@@ -1,9 +1,9 @@
 import React from "react";
 import "./login.css";
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useState,useEffect } from "react";
+import { Link,useLocation, useNavigate } from "react-router-dom";
 import loginImg from "../images/login.png";
-import {toast,ToastContainer} from "react-toastify";
+import {toast} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { GoogleAuthProvider,signInWithPopup } from "firebase/auth";
 import { auth } from "../firebase/fireBase";
@@ -17,13 +17,37 @@ import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
 function Login(props){
-
     const navigate = useNavigate();
+        const location = useLocation();
+        const searchParams = new URLSearchParams(location.search);
+        const message = searchParams.get('message');
+    useEffect(() => {
+        
+        // Parse the query parameter from the URL
+        
+        console.log(searchParams);
+        console.log(message);
+        if (message=="Registration Successful") {
+          // Show toast with the message
+            toast.success(message,{
+                position:"top-center"
+            });
+        }
+        else{
+            toast.info(message,{
+                position:"top-center"
+            });
+        }
+        navigate('.', { replace: true }); // this is to remove query params from url
+        }, []);
     
     const [user, setLogin] = useState({
         username: "",
         password: "",
         });
+
+    //forgot password
+    const [forgotMail,setMail] = useState("");
 
     const [showPassword, setShowPassword] = useState(false);
     
@@ -119,9 +143,9 @@ function Login(props){
         let show = document.querySelector("#permission1");
         show.classList.add("active1");
         // the event is for button but i need to check for input so previousElement is used
-        let mail = event.target.previousElementSibling.value;
-        console.log(mail);
-        if (mail === ""){
+        
+        console.log(forgotMail); // this forgotMail is from the useState
+        if (forgotMail === ""){
             toast.warn("You didn't enter the email",{
                 position:"top-center"
             });
@@ -147,6 +171,11 @@ function Login(props){
     const handleMouseDownPassword2 = (event) => {
         event.preventDefault();
     };
+
+    // this is for handle forgot mail
+    function handleSetMail(event){
+        setMail(event.target.value);
+    }
 
 
     
@@ -239,15 +268,15 @@ function Login(props){
                 <a className="forgot" onClick={showPermission}>Forgot Me?</a>
                 <button type="submit" id="login">Login</button>
                 <div className="div_box" id="extra">------------------or sign in with-------------------</div>
-                <ToastContainer/>
             </form>
         </div>
         <div className="div_box" id="bottom">
-        <button className="google_button" onClick={handleGoogleLogin}><img className="login_google_img" src={google1}/> Google</button>
+        <button className="google_button" onClick={handleGoogleLogin}><img className="login_google_img" alt="googlePic" src={google1}/> Google</button>
         </div>
     </div>
 
     <div className="permission1 active1" id="permission1">
+        <form onSubmit={emailSent}>
             <div className="enter_mail">
                 <div className="email_box">
                 <h6>Enter your email ID ?</h6>
@@ -258,10 +287,11 @@ function Login(props){
                 </button>
                 </div>
                 <div className="mail_btn">
-                    <input name="forgotMail" type="email" placeholder="Eg:abc123@gmail.com" id="bfg" className="login_mail"  />
-                    <button className="butn1" onClick={emailSent}>Submit</button>
+                    <input name="forgotMail" type="email" placeholder="Eg:abc123@gmail.com" id="bfg" className="login_mail" onChange={handleSetMail}  />
+                    <button className="butn1" type="submit">Submit</button>
                 </div>
             </div>
+            </form>
             </div>
 
             

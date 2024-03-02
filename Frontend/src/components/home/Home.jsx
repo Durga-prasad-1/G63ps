@@ -3,33 +3,50 @@ import "./style_home.css";
 import about from "../images/about1.png"
 import homePhoto from "../images/original.png";
 import { Link,useLocation,useNavigate } from "react-router-dom";
-import { useEffect } from "react";
-import {toast,ToastContainer} from "react-toastify";
+import { useEffect} from "react";
+import {toast} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Test from "../images/test.png"
 
 function Home(props){
     const location = useLocation();
     const navigate = useNavigate();
-
-    useEffect(() => {
     // Parse the query parameter from the URL
     const searchParams = new URLSearchParams(location.search);
     const message = searchParams.get('message');
+    useEffect(() => {
+    
     console.log(searchParams);
     console.log(message);
     if (message) {
       // Show toast with the message
+            //for successful login
         toast.success(message,{
             position:"top-center"
         });
+    
         navigate('.', { replace: true }); // this is to remove query params from url
     }
-    }, []);
+    }, [message]);
 
-    function setNav(){
-    //props.func(true); // this is for navbar status 
+    function checkLogin(event){
+        let kk = "";
+        kk = localStorage.getItem('token');
+        if(kk==null){
+            navigate('/login?message=Please%20Log%20In');
+        }
+        else{
+            console.log(event.target.innerText);
+            console.log(kk)
+        if(event.target.innerText==="Form"){
+            navigate('/form');
+        }
+        else if(event.target.innerText==="Take Test"){
+            navigate('/test');
+        }
+        }
     }
+
     return(
         <div>
     <div className="container body">
@@ -47,7 +64,7 @@ function Home(props){
             <span className="image__bg span"><img className="img" src={homePhoto} alt="fhv"/></span>
             </div>
             <div className="responsive_button">
-            <Link to="/form" ><button className="form_button" onClick={setNav}>Form</button></Link>
+            <button className="form_button" onClick={checkLogin}>Form</button>
             </div>
         </header>
         
@@ -59,7 +76,7 @@ function Home(props){
                     <span className="tst">CONFUSED ABOUT TAKING THYROID TEST?</span>
                     Feeling hesitant? Many people have similar feelings when faced with medical tests. Your health is precious, and taking this step showcases your commitment to self-care. Remember to seek support from healthcare professionals who can guide you through this process with care and expertise.Here's a test that can provide valuable insight into your thyroid health.
             </p> 
-            <Link to="/test"><button className="form_button" onClick={setNav}>Take Test</button></Link>
+            <button className="form_button" onClick={checkLogin}>Take Test</button>
             </div>
         </div>
         <div className="aboutContainer" id="about">
@@ -71,7 +88,6 @@ function Home(props){
                 </p>
             </div>
         </div>
-        <ToastContainer autoClose={3000}/> {/*this is for toast msg*/}
         </div>
         </div>
         );

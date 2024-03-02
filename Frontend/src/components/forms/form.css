@@ -58,7 +58,7 @@
     border-radius: 20px;
     padding: 15px;
     box-shadow: rgba(100, 100, 111, 0.5) 0px 7px 29px 0px;
-    
+    /* background-color: rgb(171, 13, 10); */
 }
 
 
@@ -85,7 +85,7 @@
     width: 80%;
 }
 
-#T3{
+#t3{
     grid-column: 2;
     grid-row: 6;
 }
@@ -160,7 +160,7 @@
     .box .input{
         width: 90%;
     }
-    #Tsh,#Tt4,#T3{
+    #Tsh,#Tt4,#t3{
         grid-column: initial;
         grid-row: initial;
     }
