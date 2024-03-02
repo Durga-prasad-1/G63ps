@@ -2,6 +2,7 @@ from flask import Flask, request
 import pickle
 import json
 import pandas as pd
+from datetime import datetime
 from openai import OpenAI
 from flask_pymongo import PyMongo
 from flask_cors import CORS
@@ -22,10 +23,12 @@ def predict():
                 model = pickle.load(model_file)    
         except Exception as error:
             return json.dumps(error)
-        # Parse input data from command line arguments
+        # getting the response data
         data = request.json
-        Name=data["Name"]
+        Name = data["Name"]
+        Id = data["userId"]
         del data['Name']
+        del data['userId']
         input_data = [list(data.values())]
         # Converting strings into integers and NaN
         input_data[0][1]=int(input_data[0][1])
@@ -45,7 +48,9 @@ def predict():
         print(result)
         #data["Name"]=Name
         data["result"]=result
+        data["Time"]=datetime.now().strftime("%B %d, %Y")
         data["Name"]=Name
+        data["userId"]=Id
         mongo.db.predictions.insert_one(data)
         return json.dumps({"prediction":result})
 @app.route("/suggestions",methods=['POST'])
