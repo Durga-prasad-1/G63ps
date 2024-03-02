@@ -4,6 +4,7 @@ import Menu from "./menu";
 import AccountMenu from "./task";
 import "./navbar.css"
 import { jwtDecode } from "jwt-decode";
+import { toast } from "react-toastify";
 
 
 
@@ -30,6 +31,7 @@ function Navbar2(props){
         notShowPermission();
         localStorage.removeItem('token');
         props.func(false) // changes the navbar
+        toast.info("You have logged out",{position:"top-center"});
         navigate("/");
     }
     //for avatar in img
@@ -57,7 +59,8 @@ function Navbar2(props){
                 </ul>            
                 <div className="show" onClick={() => setShowMediaIcons(!showMediaIcons)}>
                     <Menu />               
-                </div>                
+                </div>            
+                    
         </nav>
         <div className="permission active1" id="permission">
             <div className="decisionMaking">
@@ -76,6 +79,7 @@ function Navbar2(props){
                 </div>
             </div>
             </div>                        
+            
         </div>
     );
 }

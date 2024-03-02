@@ -15,13 +15,13 @@ import {
     Route,
     Routes
     } from "react-router-dom";
+    import { ToastContainer } from "react-toastify";
 
 
 function App(){
     const [setNav,handleNav] = useState(false);
     // handleNav(setNav);
     let kk = "";
-    console.log()
     kk = localStorage.getItem('token');
     // console.log(kk);
     // console.log(jwtDecode(kk));
@@ -47,6 +47,7 @@ function App(){
             <Route path="/" element={<Home />} />
             
             </Routes>
+            <div><ToastContainer autoClose={3000} limit={1}/></div>
         </Router>
         
         

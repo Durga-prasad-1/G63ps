@@ -25,7 +25,7 @@ function Contact(){
         event.preventDefault();
         console.log(contactdata);
         try {
-            const response = await fetch("https://thyroaid.onrender.com/contact",{
+            const response = await fetch("https://thyro-aid.onrender.com/contact",{
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
