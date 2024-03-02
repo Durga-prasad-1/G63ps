@@ -7,7 +7,8 @@ import InputAdornment from '@mui/material/InputAdornment';
 import FormControl from '@mui/material/FormControl';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
-
+import {toast} from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function ResetPassword(){
   const [data,setData] = useState({
@@ -60,9 +61,10 @@ function ResetPassword(){
       });
       const res_data = await response.json();
       if(response.ok){
-        alert(res_data.msg);
+        toast.success(res_data.msg,{position:"top-center"});
       }else{
-        alert(res_data.msg);
+        toast.error(res_data.msg,{position:"top-center"
+        });
       }
     } catch (error) {
       console.log(error);
