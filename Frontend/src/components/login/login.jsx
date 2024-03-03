@@ -140,6 +140,7 @@ function Login(props){
     }
 
     function emailSent(event){
+        event.preventDefault();
         let show = document.querySelector("#permission1");
         show.classList.add("active1");
         // the event is for button but i need to check for input so previousElement is used
