@@ -53,8 +53,6 @@ export default function History() {
             <h1 style={{ padding: "20px 0px", textAlign: "center", fontFamily: "Roboto,san-serif" }}>History</h1>
             <div style={{ height: 300, width: '100%' }}>
                 {loading ? (
-                    <p>Loading...</p>
-                ) : (
                     <Box sx={{ display: 'flex',justifyContent:'center' }}>
                         <CircularProgress />
                     </Box>
