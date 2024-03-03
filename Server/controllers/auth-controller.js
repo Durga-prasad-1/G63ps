@@ -87,7 +87,6 @@ const pred = require("../models/pred-model");
 const history = async (req,res)=>{
     try {
         const Id = req.userId;
-        //const collection = db.collection("predictions");
         const query = await pred.find({userId:Id});
         res.json(query);
     } catch (error) {

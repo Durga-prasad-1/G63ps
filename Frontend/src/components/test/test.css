@@ -36,12 +36,14 @@
 
 .submit-button {
     padding: 8px 16px;
-    font-size: 14px;
-    border-radius: 4px;
+    font-size: 1.5rem;
+    border-radius: 8px;
     background-color: crimson;
     color: white;
+    width: 50%;
     border: none;
     cursor: pointer;
+    margin-bottom: 20px;
     transition: background-color 0.3s ease;
 }
 
@@ -82,3 +84,11 @@
     border-color: #660708;
 }
 
+#result{
+    width: 60%;
+    height: 20%;
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 20px auto;
+    
+}
