@@ -3,7 +3,6 @@ import { DataGrid } from '@mui/x-data-grid';
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
 
-
 export default function History() {
     const [rows, setRows] = React.useState([]);
     const [loading, setLoading] = React.useState(true);
@@ -54,6 +53,8 @@ export default function History() {
             <h1 style={{ padding: "20px 0px", textAlign: "center", fontFamily: "Roboto,san-serif" }}>History</h1>
             <div style={{ height: 300, width: '100%' }}>
                 {loading ? (
+                    <p>Loading...</p>
+                ) : (
                     <Box sx={{ display: 'flex',justifyContent:'center' }}>
                         <CircularProgress />
                     </Box>
