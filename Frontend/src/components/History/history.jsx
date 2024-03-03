@@ -8,7 +8,7 @@ export default function History() {
     React.useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch("http://localhost:5000/auth/history", {
+                const response = await fetch("https://thyro-aid.vercel.app/auth/history", {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json",
