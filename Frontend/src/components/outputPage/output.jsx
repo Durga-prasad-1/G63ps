@@ -107,7 +107,7 @@ function Report(){
         <button className='report_button' onClick={showDiet} >Diet Plan</button>
       </div>
     </div>
-      <div id='dietContainer' style={{display:'none'}}>
+      <div id='dietContainer' style={{display:'none',width:'90%',margin:'0 auto'}}>
           <h3 id='dietPlan'>Diet Plan:</h3>
           <ol id='listDiet'></ol>
           <h3 id='exercise'>Exercises:</h3>
