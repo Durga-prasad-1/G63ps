@@ -29,6 +29,21 @@ function Home(props){
     }
     }, [message]);
 
+    useEffect(() => {
+        if (window.location.hash==="#about"){
+        const aboutSection = document.getElementById('about');
+        if (aboutSection) {
+            aboutSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+    else if(window.location.pathname==="/"){
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+    }, []);
+
     function checkLogin(event){
         let kk = "";
         kk = localStorage.getItem('token');
@@ -48,12 +63,12 @@ function Home(props){
     }
 
     return(
-        <div>
-    <div className="container body">
+        <div id="mainBox">
+    <div className="container body" >
         
         
-        <header className="header grided">
-            <div className="content ">
+        <header className="header grided" >
+            <div className="content " >
             <h1><span>Get Quick</span><br />Results</h1>
             <p >
                 {"Welcome to Thyroid Detection Center, a platform dedicated to providing personalized thyroid diagnosis. Our mission is to empower individuals by offering accurate predictions regarding various types of thyroid conditions based on user-provided information."} 

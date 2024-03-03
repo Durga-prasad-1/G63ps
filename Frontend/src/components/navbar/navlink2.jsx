@@ -1,5 +1,5 @@
 import React,{ useState } from "react";
-import { NavLink,useNavigate  } from "react-router-dom";
+import { NavLink,useNavigate,Link  } from "react-router-dom";
 import Menu from "./menu";
 import AccountMenu from "./task";
 import "./navbar.css"
@@ -13,11 +13,12 @@ function Navbar2(props){
     const [showMediaIcons, setShowMediaIcons] = useState(false);
     const navigate = useNavigate();
     const scrollToDiv = () => {
-        navigate('/');
-        const element = document.getElementById('about');
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-        }
+        // navigate('/#about');
+        // const element = document.getElementById('about');
+        // if (element) {
+        //     element.scrollIntoView({ behavior: 'smooth' });
+        // }
+        // window.location.href = "/#about";
     }
     function showPermission(){
         let show = document.querySelector("#permission");
@@ -48,8 +49,8 @@ function Navbar2(props){
                 <ul className={
                 showMediaIcons ? "nav__links mobile_menu_links" : "nav__links"
                 }>
-                <li className="link"><NavLink className="bb" to="/"  onClick={props.func(true)}>Home</NavLink></li>
-                <li className="link" onClick={scrollToDiv}><span className="bb">About Us</span></li>
+                <li className="link"><NavLink className="bb" to="/" target="_parent"   onClick={props.func(true)}>Home</NavLink></li>
+                <li className="link"><Link className="bb" to ="/#about" target="_parent">About us</Link></li>
                 <li className="link"><NavLink className="bb" to ="/contact">Contact</NavLink></li>            
                 <li className="googleImg" ><AccountMenu link={google.picture}  func={props.func}/></li>
                 <li className="link menushow"><NavLink className="bb" to ="/profile">Profile</NavLink></li>
