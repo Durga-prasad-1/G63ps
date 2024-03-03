@@ -91,7 +91,7 @@ const history = async (req,res)=>{
         res.status(200).json(query);
     } catch (error) {
         console.log("Error in prediction history",error);
-        res.status(500).json({msg:"Error in fetching details"});
+        res.status(500).json({msg:"Error while fetching details"});
     }
 }
 
