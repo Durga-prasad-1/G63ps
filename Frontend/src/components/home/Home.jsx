@@ -76,7 +76,7 @@ function Home(props){
             </p>
             </div>
             <div className="image">
-            <span className="image__bg span"><img className="img" src={homePhoto} alt="fhv"/></span>
+            <span className="image__bg span floating"><img className="img" src={homePhoto} alt="fhv"/></span>
             </div>
             <div className="responsive_button">
             <button className="form_button" onClick={checkLogin}>Form</button>

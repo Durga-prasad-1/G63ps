@@ -263,6 +263,21 @@ text-decoration: none;
 .form_button:hover {
     background-color: var(--primary-color-dark);
 }
+/*floating animation*/
+.floating {  
+    animation-name: floating;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes floating {
+    0% { transform: translate(-50%,  -45%); }
+    50%  { transform: translate(-50%, -35%); }
+    100%   { transform: translate(-50%, -45%); }    
+}
+
+
 @media screen and (min-width:1025px){
     .container{
         max-width: 1050px;
@@ -290,7 +305,7 @@ text-decoration: none;
 @media screen and (min-width: 1200px) {
     .container {
         min-height: 75vh;
-        max-width: 1200px;
+        max-width: 1300px;
         margin: auto;
         display: flex;
         flex-direction: column;
@@ -392,4 +407,10 @@ text-decoration: none;
 .test .form_button{
     font-size: 1.5rem;
 }
+@keyframes floating {
+    0% { transform: translate(-50%,  0%); }
+    50%  { transform: translate(-50%, 7%); }
+    100%   { transform: translate(-50%, 0%); }    
+}
+
 }
