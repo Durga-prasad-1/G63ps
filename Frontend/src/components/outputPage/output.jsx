@@ -47,19 +47,21 @@ function Report(){
       dietList.style.listStyleType = "none";
       let exerciseList = document.querySelector("#listExercise");
       exerciseList.style.listStyleType = "none";
-      if(oneTimeShow){
-      for (let statement of diet["dietPlan"]){
-        let newLi = document.createElement('li');
-        newLi.innerText = statement;
-        dietList.append(newLi);
+      if(diet){
+          if(oneTimeShow){
+          for (let statement of diet["dietPlan"]){
+            let newLi = document.createElement('li');
+            newLi.innerText = statement;
+            dietList.append(newLi);
+          }
+          for (let statement of diet["exercise"]){
+            let newLi = document.createElement('li');
+            newLi.innerText = statement;
+            exerciseList.append(newLi);
+          }
+          setOneTime(false);
+        }
       }
-      for (let statement of diet["exercise"]){
-        let newLi = document.createElement('li');
-        newLi.innerText = statement;
-        exerciseList.append(newLi);
-      }
-      setOneTime(false);
-    }
     }
 
   return (
