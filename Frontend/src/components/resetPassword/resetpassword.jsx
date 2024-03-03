@@ -51,7 +51,7 @@ function ResetPassword(){
     event.preventDefault();
     try {
       const token = localStorage.getItem("token");
-      const response = await fetch("http://localhost:5000/passwords/resetPassword",{
+      const response = await fetch("https://thyro-aid.onrender.com/passwords/resetPassword",{
         method: "POST",
         headers:{
           "Content-Type": "application/json",
