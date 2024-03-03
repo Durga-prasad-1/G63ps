@@ -10,6 +10,30 @@ function Report(){
   const T3=temp.T3;
   const TSH=temp.TSH;
   const Result=temp.Result;
+  const suggestBody = {"type":Result};
+  React.useEffect(() => {
+    const fetchData = async () => {
+        try {
+            const response = await fetch("http://127.0.0.1:5000/suggestions", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body:JSON.stringify(suggestBody),
+            });
+            if(response.ok){
+              const suggestion=await response.json();
+              console.log(suggestion);
+            }else{
+              console.log(response);
+            }
+          } catch (error) {
+            console.log(error);
+        }
+    };
+
+    fetchData(); // Call the fetchData function
+}, []);
   
   return (
     <div className='report_outerarea'>
