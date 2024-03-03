@@ -88,9 +88,10 @@ const history = async (req,res)=>{
     try {
         const Id = req.userId;
         const query = await pred.find({userId:Id});
-        res.json(query);
+        res.status(200).json(query);
     } catch (error) {
-        console.log("Error in prediction history",error);   
+        console.log("Error in prediction history",error);
+        res.status(300).json({msg:"Error while fetching details"});
     }
 }
 
