@@ -6,7 +6,7 @@ import RadioBox from "./RadioBox";
 import Input from "./Input";
 import Name from "./nameGender";
 import { jwtDecode } from "jwt-decode";
-
+import CircularProgress from '@mui/material/CircularProgress';
 
 function Form(props){
     let navigate = useNavigate();
@@ -62,6 +62,13 @@ function Form(props){
         }
         else{
             // if the required elements 
+             //======================
+            //this part is for Buffer
+            let mainCon = document.querySelector("#mainCon");
+            mainCon.style.display = "none";
+            let buffer = document.querySelector(".buffer");
+            buffer.style.display = "flex";
+            //======================
         const Id=jwtDecode(localStorage.getItem('token')).userId;
         formData["userId"]=Id;
         try {
@@ -76,6 +83,7 @@ function Form(props){
             result.TSH = formData.TSH;
             result.TT4 = formData.TT4;
             result.T3 = formData.T3;
+
             if(response.ok){
                 // alert(result.prediction);
                 const temp1={
@@ -96,8 +104,8 @@ function Form(props){
 
     return(
         
-            <div className="con">
-                <div className="main_form">
+            <div className="con" id="formContainer">
+                <div className="main_form" id="mainCon">
                     <form id="formList" onSubmit={handleSubmit}>
                     <div className="form">
                         <div><Name set={formData} func={setFormData} /><p id="Name"></p></div>
@@ -112,6 +120,11 @@ function Form(props){
                         <button className="_button" type="submit" value="Submit">Submit</button>
                     </div>
                     </form> 
+                </div>
+                <div className="buffer" style={{display:"none"}}>
+                    
+                        <CircularProgress />
+                    
                 </div>
             </div>
         

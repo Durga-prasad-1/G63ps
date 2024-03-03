@@ -1,9 +1,10 @@
-import React from 'react';
+import React,{useEffect,useState} from 'react';
 import './output.css';
 import { useLocation } from 'react-router-dom';
 
 function Report(){
-
+  const [diet,setDietPlan] = useState({});
+  const [oneTimeShow,setOneTime] = useState(true); //this is for not showing the dietplan plan after clicking multiple times
   const location = useLocation();
   const temp=location.state && location.state.Object;
   const TT4=temp.TT4;
@@ -11,10 +12,10 @@ function Report(){
   const TSH=temp.TSH;
   const Result=temp.Result;
   const suggestBody = {"type":Result};
-  React.useEffect(() => {
+  useEffect(() => {
     const fetchData = async () => {
         try {
-            const response = await fetch("http://127.0.0.1:5000/suggestions", {
+            const response = await fetch("https://thyro-aid-prediction.onrender.com/suggestions", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -24,6 +25,7 @@ function Report(){
             if(response.ok){
               const suggestion=await response.json();
               console.log(suggestion);
+              setDietPlan(suggestion);
             }else{
               console.log(response);
             }
@@ -34,7 +36,32 @@ function Report(){
 
     fetchData(); // Call the fetchData function
 }, []);
-  
+    
+    function showDiet(){
+      console.log(oneTimeShow);
+
+      let divElement = document.querySelector("#dietContainer");
+      divElement.scrollIntoView({behavior:"smooth"});
+      divElement.style.display="block";
+      let dietList = document.querySelector("#listDiet");
+      dietList.style.listStyleType = "none";
+      let exerciseList = document.querySelector("#listExercise");
+      exerciseList.style.listStyleType = "none";
+      if(oneTimeShow){
+      for (let statement of diet["dietPlan"]){
+        let newLi = document.createElement('li');
+        newLi.innerText = statement;
+        dietList.append(newLi);
+      }
+      for (let statement of diet["exercise"]){
+        let newLi = document.createElement('li');
+        newLi.innerText = statement;
+        exerciseList.append(newLi);
+      }
+      setOneTime(false);
+    }
+    }
+
   return (
     <div className='report_outerarea'>
     <div className="report_container">
@@ -77,9 +104,15 @@ function Report(){
 
       <div className="report_buttons">
         {/* <button className='report_button'>Know More</button> */}
-        <button className='report_button'>Diet Plan</button>
+        <button className='report_button' onClick={showDiet} >Diet Plan</button>
       </div>
     </div>
+      <div id='dietContainer' style={{display:'none'}}>
+          <h3 id='dietPlan'>Diet Plan:</h3>
+          <ol id='listDiet'></ol>
+          <h3 id='exercise'>Exercises:</h3>
+          <ol id='listExercise'></ol>
+      </div>
     </div>
   );
 };

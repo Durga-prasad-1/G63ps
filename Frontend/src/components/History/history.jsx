@@ -22,7 +22,18 @@ export default function History() {
                 //this is for taking required day from objects which are fetched from dbms
                 for (const ele of pred_history){
                     // console.log(ele);
-                    result.push({id:ele._id,sno:pred_history.indexOf(ele)+1,col1:ele.Name,col2:ele.result,col3:ele.T3,col4:ele.TSH,col5:ele.TT4,col6:ele.Time});
+                    result.push(
+                        {
+                            id:ele._id,
+                            sno:pred_history.indexOf(ele)+1,
+                            col1:ele.Name,
+                            col2:ele.result.charAt(0).toUpperCase() + ele.result.slice(1).toLowerCase(),
+                            col3:ele.T3,
+                            col4:ele.TSH,
+                            col5:ele.TT4,
+                            col6:ele.Time
+                        }
+                        );
                 }
                 console.log(result);
                 setRows(result); // Update the component state with fetched data
@@ -43,9 +54,9 @@ export default function History() {
         { field: 'col1', headerName: 'Name', width: 150 },
         { field: 'col2', headerName: 'Disease', width: 250 },
         { field: 'col3', headerName: 'T3', width: 150 },
-        { field: 'col4', headerName: 'Tsh', width: 150 },
+        { field: 'col4', headerName: 'TSH', width: 150 },
         { field: 'col5', headerName: 'TT4', width: 150 },
-        { field: 'col6', headerName: 'Searched on', width: 150 },
+        { field: 'col6', headerName: 'Predicted on', width: 150 },
     ];
 
     return (
