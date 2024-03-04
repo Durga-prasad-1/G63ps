@@ -8,8 +8,16 @@
     justify-content: center;
     flex-direction: column;
     gap: 30px;
-    height: 98vh;
+    min-height: 98vh;
 }
+#dietContainer{
+  display:none;
+  width:90%;
+  margin:0 auto;
+  height:90%;
+  font-size: 1.5rem;
+}
+
 
   .report_container {
     background: #87d5c0;
@@ -82,7 +90,6 @@
   .report_button:hover {
     background-color: #440dba;
   }
-  
 @media screen and (max-width : 481px) {
   .report_result{
     width: 90%;
