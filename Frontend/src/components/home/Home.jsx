@@ -6,7 +6,8 @@ import { Link,useLocation,useNavigate } from "react-router-dom";
 import { useEffect} from "react";
 import {toast} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Test from "../images/test.png"
+import Test from "../images/test.png";
+import Footer from "../footer/footer";
 
 function Home(props){
     const location = useLocation();
@@ -104,6 +105,7 @@ function Home(props){
             </div>
         </div>
         </div>
+        <Footer />
         </div>
         );
     }

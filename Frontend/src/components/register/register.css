@@ -14,7 +14,8 @@
     display:flex;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     /* position:fixed; */
-    background-color: #C2D9FF;
+    /* background-color: #8dfddf; */
+    background-color: rgb(168, 244, 213);
     flex-direction: column;
     width: 300px;
     min-height: 450px;
@@ -49,16 +50,17 @@ box-sizing: content-box;
     font-size: large;
     margin-top: 30px;
     box-sizing: content-box;
-    background-color: #190482 ;
+    background-color: #04694e ;
     color: white;
     cursor: pointer;
-    padding: 1px 6px;
-    border-radius: 30%;
+    padding: 10px 6px;
+    border-radius: 10px;
+    margin-bottom: 10%;
 }
 .panel{
     display: flex;
     position: relative;
-    background-color: #8E8FFA;
+    background-color: #2a9c7e;
     border-radius: 20px;
     top: 20px;
     left: 45px;
@@ -78,7 +80,7 @@ box-sizing: content-box;
     width: 30px;
     height: 10px;
     box-sizing: content-box;
-    background-color: #8E8FFA;
+    background-color: #2a9c7e;
     padding-bottom: 20px;
     border-radius: 20px;
 }
@@ -101,6 +103,16 @@ box-sizing: content-box;
     padding: 5px;
     box-sizing: content-box;
     width: 90%;
+}
+
+.box3{
+    margin-top: 15%;
+    margin-bottom: 10%;
+}
+
+.box4{
+    /* margin-top: 20%; */
+    margin-bottom: 10%;
 }
 
 @media (width<900px) {
