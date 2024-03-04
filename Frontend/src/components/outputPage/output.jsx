@@ -41,7 +41,7 @@ function Report(){
       console.log(oneTimeShow);
 
       let divElement = document.querySelector("#dietContainer");
-      divElement.scrollIntoView({behavior:"smooth"});
+      
       divElement.style.display="block";
       let dietList = document.querySelector("#listDiet");
       dietList.style.listStyleType = "none";
@@ -62,6 +62,7 @@ function Report(){
           setOneTime(false);
         }
       }
+      divElement.scrollIntoView({behavior:"smooth"});
     }
 
   return (
@@ -109,7 +110,7 @@ function Report(){
         <button className='report_button' onClick={showDiet} >Diet Plan</button>
       </div>
     </div>
-      <div id='dietContainer' style={{display:'none',width:'90%',margin:'0 auto'}}>
+      <div id='dietContainer'>
           <h3 id='dietPlan'>Diet Plan:</h3>
           <ol id='listDiet'></ol>
           <h3 id='exercise'>Exercises:</h3>
