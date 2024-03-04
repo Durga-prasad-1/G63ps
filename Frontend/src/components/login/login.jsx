@@ -185,7 +185,7 @@ function Login(props){
             <img src={loginImg} alt="loginImage"  className="imagePos" />
         <div className="div_box" id="outerbox">
         <div id="top">
-            <div className="div_box" id="Login"><Link to="/login" className="none">Login</Link></div>
+            <div className="div_box" id="Login"><Link to="/login" className="none1">Login</Link></div>
             <div  id="Sign"><Link to="/register" className="none">Sign Up</Link></div>
         </div>
         <div  className="form div_box">

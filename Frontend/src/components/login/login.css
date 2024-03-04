@@ -18,7 +18,7 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     /* top: 13%;
     left: 38%; */
-    background-color: #c2d9ff;
+    background-color:  rgb(168, 244, 213);
     border-radius: 10px;
 }
 
@@ -31,7 +31,7 @@
     padding: 15px;
 }
 #top{
-    background-color:#8e8ffa;
+    background-color:#04694e ;
     width: 60%;
     border-radius: 20px;
     display: flex;
@@ -52,9 +52,9 @@
 
 #Sign{
     height: 45px;
-    width: 100px;
+    width: 100px;;
     text-align: center;
-    background-color:#8e8ffa;
+    background-color:#04694e ;
     padding-top: 15px;
     border-radius: 20px;
 }
@@ -91,10 +91,14 @@
 }
 .none {
     text-decoration: none;
+    color: white;
+}
+.none1 {
+    text-decoration: none;
     color: black;
 }
 #login{
-    background-color:#365be1;
+    background-color:#04694e;
     color: aliceblue;
     font-weight: bold;
     height: 30px;
@@ -103,10 +107,11 @@
     position: relative;
     top: 40px;
     right: 80px;
+    border-radius: 10px;
 }
 
 #login:hover{
-    background-color: #0a36d9;
+    background-color: #034936;
     border: solid 3px black;
 }
 
