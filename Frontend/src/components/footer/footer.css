@@ -34,6 +34,9 @@ footer{
     display: flex;
 }
 
+.tagline{
+    margin-top: 3px;
+}
 .main2{
     width: 9vw;
     flex-direction: column;

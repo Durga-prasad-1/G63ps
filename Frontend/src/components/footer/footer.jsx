@@ -14,7 +14,7 @@ function Footer() {
       <div className="footer_container">        
       <div>
         <h1>Thyro-Aid:</h1>
-        <p>Your Thyroid Detector</p>
+        <p className="tagline">Your Thyroid Detector</p>
       </div>
 
         <div className="main2">
