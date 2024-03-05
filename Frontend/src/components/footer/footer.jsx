@@ -14,8 +14,7 @@ function Footer() {
       <div className="footer_container">        
       <div>
         <h1>Thyro-Aid:</h1>
-        <br />
-        <p>Find easy way to check thyroid</p>
+        <p>Your Thyroid Detector</p>
       </div>
 
         <div className="main2">
