@@ -42,7 +42,10 @@ function Report(){
 
       let divElement = document.querySelector("#dietContainer");
       
-      divElement.style.display="block";
+      divElement.style.display="flex";
+      divElement.style.alignItems="center";
+      divElement.style.justifyContent="center";
+
       let dietList = document.querySelector("#listDiet");
       dietList.style.listStyleType = "none";
       let exerciseList = document.querySelector("#listExercise");
@@ -107,14 +110,16 @@ function Report(){
 
       <div className="report_buttons">
         {/* <button className='report_button'>Know More</button> */}
-        <button className='report_button' onClick={showDiet} >Diet Plan</button>
+        <button className='report_button' onClick={showDiet} >Suggestions</button>
       </div>
     </div>
       <div id='dietContainer'>
-          <h3 id='dietPlan'>Diet Plan:</h3>
+        <div>
+          <h3 id='dietPlan' style={{textAlign: "center"}}>Diet Plan:</h3>
           <ol id='listDiet'></ol>
-          <h3 id='exercise'>Exercises:</h3>
+          <h3 id='exercise' style={{textAlign: "center"}}>Exercises:</h3>
           <ol id='listExercise'></ol>
+        </div>
       </div>
     </div>
   );
